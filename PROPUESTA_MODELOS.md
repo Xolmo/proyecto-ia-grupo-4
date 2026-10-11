@@ -13,8 +13,7 @@ Anticipar los casos mensuales de leishmaniosis cutánea por distrito en el Perú
 | **Integrante 1** — Adams et al. (2025), *Environ. Res.: Health* | Leishmaniosis visceral en 113 municipios de Brasil | XGBoost en ventana deslizante (entrena 24 meses, valida 3); regresión de conteos + clasificación binaria; SHAP | Ventana deslizante, lags 1–12 sin fuga, umbral operativo definido por la autoridad sanitaria, doble enfoque regresión/clasificación |
 | **Integrante 2** — Donizette, Rocco & de Queiroz (2025), *Oper. Res. Health Care* | Leishmaniosis visceral y tegumentaria en 6 ciudades de Brasil | SFNN y DFNN (MLP), LSTM, SVR; RMSE como métrica; también probaron RF, GB, XGBoost y LightGBM (peores) | Comparación MLP / LSTM / SVR, lags 1–3 de casos como entradas, evaluar el ajuste gráfico además del RMSE |
 | **Integrante 3** | _pendiente_ | _pendiente_ | _pendiente_ |
-| **Integrante 4** | _pendiente_ | _pendiente_ | _pendiente_ |
-
+| **Integrante 4** — El Alaoui et al. (2026), *Parasitol. Int.* | Leishmaniosis cutánea en 29 municipios de Errachidia (Marruecos), 2010–2025: distribución espacial y pronóstico mensual de casos | SARIMA (0,1,0)(1,1,0) con s = 12, elegido por AIC y validado con Ljung-Box; RMSE = 12,35 y MAE = 10,15 en prueba (80/20); sin variables climáticas en el modelo | SARIMA como línea base simple e interpretable; el clima se relaciona con los casos (temperatura r = −0,49, humedad r = +0,47, lluvia sin relación) |
 ## Modelos a implementar
 
 | # | Modelo | Tarea | Origen | Papel | Técnica del curso |
