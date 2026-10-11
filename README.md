@@ -1,10 +1,10 @@
-## Predicción de leishmaniosis cutánea en Cajamarca (Perú)
+# Predicción de leishmaniosis cutánea en Cajamarca (Perú)
 
 Proyecto del Grupo 4 para anticipar los casos mensuales de leishmaniosis cutánea por distrito del departamento de Cajamarca (regresión) y detectar los meses de alerta (clasificación). Se usa el historial de casos del CDC-MINSA 2000–2024 y, donde hay cobertura, el clima de las estaciones de SENAMHI.
 
 Estado: análisis exploratorio, preprocesamiento e integración del clima terminados. Los modelos todavía no están entrenados.
 
-# Integrantes
+## Integrantes
 Dhanny Sebastian Ramirez Rivera
 Sergio Estéfano Huamán Noriega
 Leonardo Jaime Flores Vera
@@ -12,11 +12,11 @@ Vilcapoma Madueño Franz Javier
 
 Curso: Inteligencia Artificial Aplicada · Docente: Galareta Asian, Ana Paula
 
-# Alcance
+## Alcance
 
 El análisis se limita a Cajamarca, porque es la región donde se pudo asociar el clima de SENAMHI a los distritos con casos. Los resultados aplican a Cajamarca y no deben extrapolarse al resto del país.
 
-# Datos
+## Datos
 Fuente	Contenido	Ubicación
 CDC-MINSA (RENACE), Plataforma Nacional de Datos Abiertos	156 819 casos individuales de leishmaniosis cutánea, 2000–2024, 23 departamentos	data/raw/ · descripción en descripcion_dataset_leishmaniosis.md
 SENAMHI	Series diarias de precipitación y temperatura máxima/mínima de 26 estaciones de Cajamarca (y 8 de Cusco, no usadas)	data/clima/
@@ -24,7 +24,8 @@ INEI vía ubigeo-peru-aumentado	Coordenadas de distritos y centros poblados de C
 
 El portal advierte que la información es provisional y que las semanas más recientes pueden estar subestimadas por retraso en la notificación.
 
-# Estructura del repositorio
+## Estructura del repositorio
+
 .
 ├── data/
 │   ├── raw/          # CSV de vigilancia y su descripción
@@ -39,18 +40,17 @@ El portal advierte que la información es provisional y que las semanas más rec
 ├── results/plots/    # gráficos del EDA
 ├── papers/           # papers de referencia y resúmenes
 └── PIPELINE_PROPUESTO.md  # diseño del pipeline y de los modelos
-# Cómo reproducirlo
 
 Requiere Python 3 con pandas, numpy y scikit-learn; imbalanced-learn solo si se usa SMOTE.
 
 bash
 pip install pandas numpy scikit-learn imbalanced-learn
 
-# Panel mensual distrito × mes (todo el país) -> data/processed/
+### Panel mensual distrito × mes (todo el país) -> data/processed/
 python src/preprocessing.py
 python src/preprocessing.py --exclude-week1   # sensibilidad sin la semana 1
 
-# Panel de Cajamarca con clima -> data/processed/dataset_cajamarca.csv
+### Panel de Cajamarca con clima -> data/processed/dataset_cajamarca.csv
 python src/integracion_clima.py
 
 Ejecutar siempre desde la raíz del repositorio. El notebook notebooks/01_eda.ipynb reproduce el análisis exploratorio.
