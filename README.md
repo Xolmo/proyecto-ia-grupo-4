@@ -2,7 +2,7 @@
 
 Proyecto del Grupo 4 para anticipar los **casos mensuales de leishmaniosis cutánea por distrito** del departamento de Cajamarca (regresión) y detectar los **meses de alerta** (clasificación). Se usa el historial de casos del CDC-MINSA 2000–2024 y, donde hay cobertura, el clima de las estaciones de SENAMHI.
 
-> **Estado:** análisis exploratorio, preprocesamiento e integración del clima terminados. Los modelos todavía no están entrenados.
+> **Estado:** análisis exploratorio, preprocesamiento, integración del clima y líneas base terminados. Los modelos de la propuesta todavía no están entrenados.
 
 ## Integrantes
 
@@ -22,8 +22,8 @@ El análisis se limita a **Cajamarca**, porque es la región donde se pudo asoci
 | Fuente | Contenido | Ubicación |
 |---|---|---|
 | CDC-MINSA (RENACE), Plataforma Nacional de Datos Abiertos | 156 819 casos individuales de leishmaniosis cutánea, 2000–2024, 23 departamentos | `data/raw/` · descripción en [`descripcion_dataset_leishmaniosis.md`](data/raw/descripcion_dataset_leishmaniosis.md) |
-| SENAMHI | Series diarias de precipitación y temperatura máxima/mínima de 26 estaciones de Cajamarca (y 8 de Cusco, no usadas) | `data/clima/` |
-| INEI vía [ubigeo-peru-aumentado](https://github.com/jmcastagnetto/ubigeo-peru-aumentado) | Coordenadas de distritos y centros poblados de Cajamarca; coordenadas de las estaciones | `data/external/` · fuentes en [`FUENTES.md`](data/external/FUENTES.md) |
+| SENAMHI | Series diarias de precipitación y temperatura máxima/mínima de 26 estaciones de Cajamarca (y 8 de Cusco, no usadas) | `data/raw/clima/` |
+| INEI vía [ubigeo-peru-aumentado](https://github.com/jmcastagnetto/ubigeo-peru-aumentado) | Coordenadas de distritos y centros poblados de Cajamarca; coordenadas de las estaciones | `data/raw/external/` · fuentes en [`FUENTES.md`](data/raw/external/FUENTES.md) |
 
 El portal advierte que la información es provisional y que las semanas más recientes pueden estar subestimadas por retraso en la notificación.
 
@@ -32,26 +32,33 @@ El portal advierte que la información es provisional y que las semanas más rec
 ```
 .
 ├── data/
-│   ├── raw/          # CSV de vigilancia y su descripción
-│   ├── clima/        # series diarias SENAMHI (cajamarca/, cusco/)
-│   ├── external/     # coordenadas de estaciones, distritos y centros poblados
+│   ├── raw/
+│   │   ├── clima/    # series diarias SENAMHI (cajamarca/, cusco/)
+│   │   ├── external/ # coordenadas de estaciones, distritos y centros poblados
+│   │   └── ...       # CSV de vigilancia y su descripción
 │   └── processed/    # se genera al correr los scripts (no está en el repo)
 ├── notebooks/
-│   └── 01_eda.ipynb  # análisis exploratorio
+│   ├── 01_eda.ipynb          # análisis exploratorio de los casos
+│   ├── 02_eda_clima.ipynb    # exploración del clima y su cobertura
+│   └── 03_baseline.ipynb     # líneas base de regresión y alerta
 ├── src/
 │   ├── preprocessing.py       # limpieza, panel distrito × mes, variables, alerta, escalado
 │   └── integracion_clima.py   # une el clima de SENAMHI con los casos de Cajamarca
-├── results/plots/    # gráficos del EDA
+├── results/
+│   ├── plots/                 # gráficos del EDA y del baseline
+│   └── baseline_metricas.csv  # métricas de las líneas base
 ├── papers/           # papers de referencia y resúmenes
-└── PIPELINE_PROPUESTO.md  # diseño del pipeline y de los modelos
+├── PIPELINE_PROPUESTO.md  # diseño del pipeline y de los modelos
+├── ENTREGABLE_PARCIAL.md  # checklist del entregable de la semana 8
+└── requirements.txt       # dependencias
 ```
 
 ## Cómo reproducirlo
 
-Requiere Python 3 con `pandas`, `numpy` y `scikit-learn`; `imbalanced-learn` solo si se usa SMOTE.
+Requiere Python 3; las dependencias están en `requirements.txt` (`imbalanced-learn` solo se usa para SMOTE).
 
 ```bash
-pip install pandas numpy scikit-learn imbalanced-learn
+pip install -r requirements.txt
 
 # Panel mensual distrito × mes (todo el país) -> data/processed/
 python src/preprocessing.py
@@ -61,7 +68,7 @@ python src/preprocessing.py --exclude-week1   # sensibilidad sin la semana 1
 python src/integracion_clima.py
 ```
 
-Ejecutar siempre desde la raíz del repositorio. El notebook `notebooks/01_eda.ipynb` reproduce el análisis exploratorio.
+Ejecutar siempre desde la raíz del repositorio. Los notebooks de `notebooks/` reproducen el análisis exploratorio (`01_eda`, `02_eda_clima`) y las líneas base (`03_baseline`).
 
 ## Metodología
 
