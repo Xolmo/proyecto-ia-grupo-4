@@ -35,7 +35,7 @@ from preprocessing import TRAIN_END, build_monthly_panel, clean_cases, load_raw
 # Constantes
 # --------------------------------------------------------------------------
 REGION = "CAJAMARCA"
-EXTERNAL = Path("data/external")
+EXTERNAL = Path("data/raw/external")
 MIN_DIAS_VALIDOS = 0.8         # fracción mínima de días con dato para aceptar un mes
 MIN_MESES_TEMP = 0.5           # una estación "tiene temperatura" si cubre >= 50 % de los meses
 CORTE_NOMBRE = 0.85            # similitud mínima para aceptar un centro poblado parecido
@@ -277,7 +277,7 @@ if __name__ == "__main__":
 
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--raw", default="data/raw/datos_abiertos_vigilancia_leishmaniosis_2000_2024.csv")
-    ap.add_argument("--clima", default="data/clima")
+    ap.add_argument("--clima", default="data/raw/clima")
     ap.add_argument("--out", default="data/processed")
     a = ap.parse_args()
 
