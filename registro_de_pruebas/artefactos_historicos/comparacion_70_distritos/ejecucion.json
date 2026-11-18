@@ -1,0 +1,16 @@
+{
+  "imputation": {
+    "variant": "estacional_52",
+    "rows": 20160,
+    "initial_missing_cells": 27840,
+    "target_cells": 14477,
+    "filled_cells": 14477,
+    "fraction_missing_filled": 0.520007183908046,
+    "remaining_missing_cells": 13363,
+    "recursive_sources": 11458
+  },
+  "original_tree_reproduced": true,
+  "cutoff_train": 2018,
+  "test": "2019\u20132024",
+  "note": "Comparaci\u00f3n exploratoria con el alcance original de 70 distritos"
+}

@@ -1,0 +1,24 @@
+{
+  "seed": 42,
+  "python": "3.12.14",
+  "sklearn": "1.9.1",
+  "torch": "2.15.0+cpu",
+  "pandas": "3.1.1",
+  "numpy": "2.5.5",
+  "raw_sha256": "948f82a31ee2181bbf9ad7fbd45e2a1ce8d0e802edd7470b0955acb56a6526e7",
+  "protocols": {
+    "historico": {
+      "fit": 2009,
+      "val": 2011,
+      "end": 2014
+    },
+    "oficial": {
+      "fit": 2015,
+      "val": 2018,
+      "end": 2024
+    }
+  },
+  "cnn_epochs": 50,
+  "candidate_count": 2,
+  "note": "Sin modificar notebooks existentes"
+}

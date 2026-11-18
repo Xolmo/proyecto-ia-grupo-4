@@ -1,0 +1,13 @@
+{
+  "status": "OK",
+  "canonical_v1": "pipeline propuesta 17-11",
+  "historical_metric_rows": 649,
+  "documented_decisions": 26,
+  "package_manifest_files": 94,
+  "v1_unit_tests": 6,
+  "original_tree_reproduced": true,
+  "rf_imputed_RMSE": 0.890787,
+  "alternative_implementations_removed": true,
+  "artifacts_preserved": true,
+  "git_preserves_exact_bytes": true
+}

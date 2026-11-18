@@ -1,0 +1,472 @@
+[
+  {
+    "path": ".gitattributes",
+    "bytes": 81,
+    "sha256": "304594a1a5be40a7210180ca58db87f04751f015ad6b1ad0b0484195113fbf72"
+  },
+  {
+    "path": "DECISIONES_Y_FUENTES.md",
+    "bytes": 22749,
+    "sha256": "0338e9e8b55605577057396bde5bc8c9b60af7ea4dc87e28e1239685e04a2a99"
+  },
+  {
+    "path": "GUIA_DEL_PIPELINE.md",
+    "bytes": 10649,
+    "sha256": "ba51760bc09b80350871238e407796245a19ab59f016cd1eb295b8f717431bdf"
+  },
+  {
+    "path": "codigo/comparacion_70_distritos.py",
+    "bytes": 3767,
+    "sha256": "b5321866dd245c5797932bfa071869bac3e7e00e4686bb7b4d9a10f388ae2fbf"
+  },
+  {
+    "path": "codigo/ejecutar.py",
+    "bytes": 2618,
+    "sha256": "7bebf79c1a8c0db5ac2cb4b247d975484c58479a5c0f402f90a8b5b614c12fc8"
+  },
+  {
+    "path": "codigo/experimento_clima.py",
+    "bytes": 21705,
+    "sha256": "be694a6094e2f7144e04489951dc95dd7ce78184ccb768dc5f44e4e6868b816c"
+  },
+  {
+    "path": "codigo/integracion_clima.py",
+    "bytes": 15792,
+    "sha256": "901487b0cb3e2ba03a84b133360a8f88fcbd2e71f3f8f833940018b1ef038d24"
+  },
+  {
+    "path": "codigo/preprocessing.py",
+    "bytes": 11601,
+    "sha256": "3c8d1604ac8b5d4c1932cfdaeb486d1ee9ffceb10270d9c531eb501f1bb69926"
+  },
+  {
+    "path": "codigo/reporte_experimento_clima.py",
+    "bytes": 8195,
+    "sha256": "7661aa0d572d03df4f0e146089834f69f187c9450eb54ad4dd2c31ffed0f1c6b"
+  },
+  {
+    "path": "codigo/tests/test_experimento_clima.py",
+    "bytes": 3599,
+    "sha256": "88b50a6c6faf9cec108553b69adce7f89c074f5015d5d71d3aeb39c0365a6069"
+  },
+  {
+    "path": "codigo/verificar_experimento_clima.py",
+    "bytes": 4013,
+    "sha256": "83d3f34bfb49f946b8e5f2b5dd702a1be73db6a304a009901b6ba980aca5e0c2"
+  },
+  {
+    "path": "data/processed/clima_diario.csv",
+    "bytes": 42168409,
+    "sha256": "de900fb8187536a586de6c809dacdfd56bdf704f14243f2e259efa31607fa1dc"
+  },
+  {
+    "path": "data/processed/clima_mensual_cajamarca.csv",
+    "bytes": 1198495,
+    "sha256": "59b71f77d5f680e23be527215416b14dd3019265bdec94aa8f92608853286dec"
+  },
+  {
+    "path": "data/processed/dataset_cajamarca.csv",
+    "bytes": 4480172,
+    "sha256": "e918dffea7005994a628dabd6a6627c47bcb53cbeef8a0452d40bfc3eb19b069"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/asignacion_estaciones.csv",
+    "bytes": 3369,
+    "sha256": "20ffbe29695936c6a11f55ca14a18b25ae07652c69f1c390710aa20fa14e6d76"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/estacional_52.csv",
+    "bytes": 2414133,
+    "sha256": "4c1616174206c70046b0a6003a140c47f682454ae7638f613c40482eefb26d7d"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/estacional_52_auditoria.csv",
+    "bytes": 46650,
+    "sha256": "d635749f0afb49dbbe67014a7009c88f39e7167f0da0a39465b70d81444b70e6"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/huecos_cortos.csv",
+    "bytes": 2412518,
+    "sha256": "2a31c8e33f3bd4163ad6ae28228c5b4be64c5097584090be5af9ce53431d6fe7"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/huecos_cortos_auditoria.csv",
+    "bytes": 35056,
+    "sha256": "b2417e82850742f9e156e0c161d35dfb67fee9024af1e520d251351137bc60a5"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/sin_imputar.csv",
+    "bytes": 2375044,
+    "sha256": "345b8f3ecb6d5058c4a672f372c7868e3d3e0bc9e8d55fd18d2990b1da5412c3"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/sin_imputar_auditoria.csv",
+    "bytes": 2,
+    "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/asignacion_estaciones.csv",
+    "bytes": 4142,
+    "sha256": "5976ccb784c2a0b46d580adb79d548bfc8e70ea48953aa5059b2afe6896dae57"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/estacional_52.csv",
+    "bytes": 4899776,
+    "sha256": "a4720b5253a7052d438e823368a4d24046d4d114d4b5cd73019f3532adb36b17"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/estacional_52_auditoria.csv",
+    "bytes": 635794,
+    "sha256": "a7968f21a2291d0980c70f33b8efcc72ea82a1a900acbe74e3de2c623c28548e"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/huecos_cortos.csv",
+    "bytes": 4437337,
+    "sha256": "086f65075970ff9929e5f679527102f21205a5cfee1c6e5350aa6861b9d4db2a"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/huecos_cortos_auditoria.csv",
+    "bytes": 45229,
+    "sha256": "40552b4fdda3bffebf68563e53d5d1c929c99e2db479ebb02f7ac6e06db800c0"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/sin_imputar.csv",
+    "bytes": 4389017,
+    "sha256": "de02213480cc631ee22d6fe83d39639c7bb3a6d7124dde0142aca389f6b3d4c8"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/sin_imputar_auditoria.csv",
+    "bytes": 2,
+    "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+    "path": "data/processed/experimento_clima/resumen_imputacion.csv",
+    "bytes": 545,
+    "sha256": "ae43dad5a670b469769324a7e3c57a82646377bba749dd7647daad8e549b3413"
+  },
+  {
+    "path": "data/processed/match_localidades_cajamarca.csv",
+    "bytes": 450375,
+    "sha256": "cdd67387ae64fe2e249bd3e7d93417152c0131991650c5313c887c4ca60f8e74"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000240 - tabaconas.txt",
+    "bytes": 410733,
+    "sha256": "5c0a5a9c2415647afc930ec01b38d9508fba73c1dacafb1ccf34010f1c0da4a6"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000241 - el limon.txt",
+    "bytes": 402836,
+    "sha256": "3b4575e3d603159fbf65290c375be46dfcb021aad02b681b8d7fe512c731d6bc"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000250 - chontali.txt",
+    "bytes": 442609,
+    "sha256": "94f3c2b936032ca5a9c712c951fd09684e38b7ca9eb6fbb12e711f085a6dd112"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000260 - chirinos.txt",
+    "bytes": 225844,
+    "sha256": "b5e56733263d61034a37f6e97f62033a03744dc070b2a071d5dcb6261210a925"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000304 - augusto weberbauer.txt",
+    "bytes": 679035,
+    "sha256": "2c27569442bc57197d7a85f059a39881510acbe6540c5622dac3740f94bc80ef"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000341 - llama.txt",
+    "bytes": 401681,
+    "sha256": "c0dd4c8d6ad0c80df5307c26f45608703e73de2000d684669798132e2a246b38"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000349 - la cascarilla.txt",
+    "bytes": 236238,
+    "sha256": "322041eea06f61e2b6ea95bc9a57f4c78886c936816c1a4fc06f57f0c18a038e"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000352 - cutervo.txt",
+    "bytes": 424941,
+    "sha256": "7fa9ceaa9a514444f64c0313963551a85abb68f3a711d65100beb6fa3d7ae49e"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000353 - cochabamba.txt",
+    "bytes": 427464,
+    "sha256": "903fd76bccc273a01af855ca0f45313e57fcc1f566e7494d215d58089485c105"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000369 - san juan.txt",
+    "bytes": 432412,
+    "sha256": "da44342bbe0606c62e551ddf704c398db1023458174e846707d9ac01ce6deeee"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000370 - san marcos.txt",
+    "bytes": 427103,
+    "sha256": "232c3204a585aa2eb9315ca725b63f891ccecf7dcb4829bc5e9caecd3d0558f0"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000373 - cajabamba.txt",
+    "bytes": 423631,
+    "sha256": "33b1c4485778a88574fb6c7ee7ff182bf8605b173fcf2bc9652e9dd4d50c52e6"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000393 - asuncion.txt",
+    "bytes": 454963,
+    "sha256": "1a4246a73dee721bf478d265c9e3378717de1b9780008331f490fd1fa8e7fcb8"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000395 - chancay banos.txt",
+    "bytes": 226754,
+    "sha256": "db70964b7769796f559b9707de2d5056c6630dbb06b798951178f476ba5c44b8"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00152129 - sallique.txt",
+    "bytes": 462665,
+    "sha256": "fad6faaaaed5e7067abd49d9fa21e98aa4a2050d6ed4dbdbe7fdc46244039c80"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153103 - tocmoche.txt",
+    "bytes": 458868,
+    "sha256": "eb7b9141f41438dcd1c6688601397b5058db655f95a5ea9983c385c86a5c86ce"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153107 - hacienda pucara.txt",
+    "bytes": 477395,
+    "sha256": "0706c92fc2a73c0c6c8f882951ce0223411545130774a07520efe9a2f1891355"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153108 - quebrada shugar.txt",
+    "bytes": 502636,
+    "sha256": "fce7389fba2e50102b0e24466f45295df73c4c873bb2f645f5cfe5cc692505a4"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153109 - querocotillo.txt",
+    "bytes": 474465,
+    "sha256": "88313027c88d4e1d299b9fca59b6998620a71240f39af4adf7f41854677c21b9"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153110 - UDIMA.txt",
+    "bytes": 461082,
+    "sha256": "8f64a15df9b00b93e37fa1819732665eb721f53e12793151e5f0a76c25454e27"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153111 - LIVES.txt",
+    "bytes": 470256,
+    "sha256": "f6174ca188546a55f2cd89a12f8e0d8881e9d96d025bfe8a2b952ed4a6601ca1"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153201 - san benito.txt",
+    "bytes": 459913,
+    "sha256": "505aafa2dce0f27d734bae5e6d645f4ae6026b2d014cf6e1fc1fb668d86a42f5"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153203 - cilete.txt",
+    "bytes": 467454,
+    "sha256": "50bf79f5eea7e3390c2f38585dfc127bb21aa057958e7b2508baf1c95152a746"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153208 - chugur.txt",
+    "bytes": 477429,
+    "sha256": "004e088f43589f92ce64fc653f567d097f9d22c7bead8003a52295ebe7d34ae4"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153223 - cachachi.txt",
+    "bytes": 481109,
+    "sha256": "4fcf70c75460bbf28bb0187a27d2d042f414cb30092329f2a995fe331f7dae90"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153235 - chotano lajas.txt",
+    "bytes": 273260,
+    "sha256": "a87cff38c300aef5f46bd867519b027fd1f8de75606ebecd59f50b6a04fd5828"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000607 - granja kcayra.txt",
+    "bytes": 420975,
+    "sha256": "91e9478123a98571e0c631335346d81dbcf7d6c32670a27c6640cc72e7b504db"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000686 - paruro.txt",
+    "bytes": 431218,
+    "sha256": "54204f0f90e9f0eb6b61f31884d9ad52fbd89678d85457739af9f02e119b7486"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000687 - ACOMAYO.txt",
+    "bytes": 420907,
+    "sha256": "33b02d7fd48060bc2407cfb1bd835f5fa1edf255774f438f3d81724d7599d790"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000690 - ccatcca.txt",
+    "bytes": 391359,
+    "sha256": "14ac9e29e10e084e2682dda481693ef4402409dd7ba9bcacf4eb8978a6076ae6"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000809 - caycay.txt",
+    "bytes": 442979,
+    "sha256": "0ea3c893e66b96b78d1c43caae033b889495e76712d8afd06080becc8673e4b4"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000812 - pomacanchi.txt",
+    "bytes": 252703,
+    "sha256": "077c4b4dce1e0e906a00787415e3e0baf8692427ebe2cd7c1d3b617309a659e9"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000844 - pisac.txt",
+    "bytes": 453046,
+    "sha256": "2a0182d45054ef90e0b2c7cda6ddb396b96faec5a77eeb114c2f5e31bfd28418"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00156306 - colquepata.txt",
+    "bytes": 450842,
+    "sha256": "2d0a77667d6435e415532946f522b1b4b9c5d95b0800176e60f3885421a3ddda"
+  },
+  {
+    "path": "data/raw/datos_abiertos_vigilancia_leishmaniosis_2000_2024.csv",
+    "bytes": 19207862,
+    "sha256": "948f82a31ee2181bbf9ad7fbd45e2a1ce8d0e802edd7470b0955acb56a6526e7"
+  },
+  {
+    "path": "data/raw/descripcion_dataset_leishmaniosis.md",
+    "bytes": 4080,
+    "sha256": "929609d60def4c7ffd0295a4e3be9cbc73de5d3bd332cced07744eb617089a6f"
+  },
+  {
+    "path": "data/raw/external/FUENTES.md",
+    "bytes": 1247,
+    "sha256": "b0ed0f287c700b0b8626584caf52b3c7924c29b94012791acfc3e3ce34eb4301"
+  },
+  {
+    "path": "data/raw/external/centros_poblados_cajamarca.csv",
+    "bytes": 676065,
+    "sha256": "0015a6edebc88945098568af75009ebb0c4484756e8209aad6ef0c38d742ddd1"
+  },
+  {
+    "path": "data/raw/external/distritos_cajamarca.csv",
+    "bytes": 11995,
+    "sha256": "7b8d053983e4f22fc6b94fb2e3b87b9c330acc24bf4cd65c2284e42de5aec200"
+  },
+  {
+    "path": "data/raw/external/estaciones_senamhi.csv",
+    "bytes": 2804,
+    "sha256": "0dc202ef3ca38635e90c1b23eaea6dd28a698b72a719a2d5ef145f174a6a5b54"
+  },
+  {
+    "path": "fuentes/DECISION_EQUIPO.md",
+    "bytes": 2357,
+    "sha256": "7dd0e8a49331e9fea61382edda610559e9ba2470806d075dabb3add0263e09d4"
+  },
+  {
+    "path": "fuentes/material_equipo/01_eda.ipynb",
+    "bytes": 669733,
+    "sha256": "f7464f62035577d9b52edd7b640dcd7d55beb223bcd39cdff0cc41d1b362e44c"
+  },
+  {
+    "path": "fuentes/material_equipo/02_eda_clima.ipynb",
+    "bytes": 1185931,
+    "sha256": "13e401319f73b11a70bb7d3ae95b62522534c130b9f307eeffd4124871c9e174"
+  },
+  {
+    "path": "fuentes/material_equipo/04_arbol_decision.ipynb",
+    "bytes": 703818,
+    "sha256": "8462fd7dac05c18425098d43bfd6597f65cd7b8fba1ebff226bd2357033305bb"
+  },
+  {
+    "path": "fuentes/papers/paper_integrante 1.pdf",
+    "bytes": 1429494,
+    "sha256": "d62f537d99895b1bb6f98758d47ee50d60a63b816d1071b0a62b1346916a3231"
+  },
+  {
+    "path": "fuentes/papers/paper_integrante 2.pdf",
+    "bytes": 3923091,
+    "sha256": "8b846bacd7fa80859c07cd21912032afcbdd5c40f306973a065f0e30740b20c3"
+  },
+  {
+    "path": "fuentes/papers/paper_integrante 3.pdf",
+    "bytes": 2221947,
+    "sha256": "4f8b2d4b5d11a466f1dd3c974406e861dd4ede39ec4197a370995cb5998d7049"
+  },
+  {
+    "path": "fuentes/papers/paper_integrante 4.pdf",
+    "bytes": 10436130,
+    "sha256": "559984d1172b937e662ee2ebac1a9362220e20545c5aae5105948fdb0e005066"
+  },
+  {
+    "path": "requirements-lock.txt",
+    "bytes": 357,
+    "sha256": "748db63ddcd1c23820dd7793d7b766d5b6899e9e097479f401b09cfbc375d3ec"
+  },
+  {
+    "path": "requirements.txt",
+    "bytes": 70,
+    "sha256": "3286231dd7b63410e26d86b0a4938de12dad103031d33164f8bc0c7cf99756fd"
+  },
+  {
+    "path": "results/arbol_metricas.csv",
+    "bytes": 2216,
+    "sha256": "72a271bde0d7dad0aae5b602ee8ee70570d0d75418c2dc5cac6574bfd6d769e3"
+  },
+  {
+    "path": "results/comparacion_70_distritos/auditoria_imputacion.csv",
+    "bytes": 783520,
+    "sha256": "e78adcea485516de003fb23b359a4cc1654ce69aa6915501e31962ca3d03a2c2"
+  },
+  {
+    "path": "results/comparacion_70_distritos/ejecucion.json",
+    "bytes": 471,
+    "sha256": "a1ada8656609ee905321cf4118ad1d1666d912221dcc80909db40e6ae204d1bc"
+  },
+  {
+    "path": "results/comparacion_70_distritos/metricas.csv",
+    "bytes": 366,
+    "sha256": "294364c65fe798df906641362b840a81f8b9520cea632b3803712cc92f15f5e6"
+  },
+  {
+    "path": "results/comparacion_70_distritos/predicciones.csv",
+    "bytes": 399607,
+    "sha256": "fc2f260624d9c7ff88741aacb5de825185f2802bece8163eceee60b1e8172522"
+  },
+  {
+    "path": "results/experimento_clima/RESULTADOS.md",
+    "bytes": 8402,
+    "sha256": "9f921a5b8a8d5ba9ac430df924ca89d3c9e761877336f052575caf974bc04a16"
+  },
+  {
+    "path": "results/experimento_clima/diagnostico_ajuste.csv",
+    "bytes": 1274,
+    "sha256": "0f3e980245c1975540e5346b14bc54b71bcabc38874530f0ec502d5ff41b995d"
+  },
+  {
+    "path": "results/experimento_clima/ejecucion.json",
+    "bytes": 509,
+    "sha256": "ce802b366dc744c6aec212f4987ff9caef1b89c229b953c8888c78c7324a040b"
+  },
+  {
+    "path": "results/experimento_clima/integridad_datasets.csv",
+    "bytes": 289,
+    "sha256": "666cebdeedc24c376d1ae6d317203d9575ae54ec7ec70acab10ada3fc3240dd8"
+  },
+  {
+    "path": "results/experimento_clima/metricas.csv",
+    "bytes": 15793,
+    "sha256": "6d0e67e9df683269d5c60e3495fcfa0852f35472931063b4359d5ccf19b5f164"
+  },
+  {
+    "path": "results/experimento_clima/predicciones.csv",
+    "bytes": 18620134,
+    "sha256": "63e5c7444657af556a1bd7a1663bbe5601c722242e2d62670dd138fd3bc84527"
+  },
+  {
+    "path": "results/experimento_clima/seleccion_por_validacion.csv",
+    "bytes": 852,
+    "sha256": "1d6daf0c1a1d4e80c093461a53d4cdaaad2a48c27c257e2a717ba6676648feab"
+  },
+  {
+    "path": "results/experimento_clima/validacion.csv",
+    "bytes": 10888,
+    "sha256": "0b2c3fc2459ca1f9d1a85ffc0c1cbc2d22551d2d3f375383448e8783be5e67c1"
+  },
+  {
+    "path": "results/experimento_clima/verificacion.json",
+    "bytes": 282,
+    "sha256": "71607a73fb32ceead45329ec4a408d34a3cee7293d6e74b03ba174cf317e0972"
+  }
+]

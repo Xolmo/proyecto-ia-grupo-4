@@ -1,0 +1,9 @@
+{
+  "status": "OK",
+  "prediction_rows": 230400,
+  "identical_targets_to_v1": true,
+  "validation_candidates": 480,
+  "result_rows": 120,
+  "no_two_stage_model": true,
+  "mlp_selection_hit_cap": 1
+}

@@ -1,0 +1,8 @@
+{
+  "status": "OK",
+  "combinations": 440,
+  "prediction_rows": 1267200,
+  "targets_identical_to_v2": true,
+  "no_future_climate": true,
+  "daily_official_uses_case_fallback": true
+}

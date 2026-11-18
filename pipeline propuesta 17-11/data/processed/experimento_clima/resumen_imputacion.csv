@@ -1,0 +1,7 @@
+variant,rows,initial_missing_cells,target_cells,filled_cells,fraction_missing_filled,remaining_missing_cells,recursive_sources,protocol,districts
+sin_imputar,7728,1639,,0,0.0,1639,0,historico,46
+estacional_52,7728,1639,852.0,852,0.5198291641244661,787,121,historico,46
+huecos_cortos,7728,1639,,603,0.3679072605247102,1036,0,historico,46
+sin_imputar,16416,22586,,0,0.0,22586,0,oficial,57
+estacional_52,16416,22586,11745.0,11745,0.5200123970601257,10841,9291,oficial,57
+huecos_cortos,16416,22586,,780,0.03453466749313734,21806,0,oficial,57

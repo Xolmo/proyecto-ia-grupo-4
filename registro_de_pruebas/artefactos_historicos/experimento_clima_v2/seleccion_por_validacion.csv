@@ -1,0 +1,5 @@
+protocol,variant,family,task,window,candidate,validation_score,policy,threshold,validation_feasible,n_train,n_test,climate_fraction,RMSE,MAE,MASE,PR_AUC,F1,recall,precision,ROC_AUC,true_alerts,predicted_alerts,false_alerts
+historico,solo_casos,random_forest,alerta,5,1,0.2904084258240016,f1,0.6456146750096261,True,2760,1656,0.0,,,,0.08962347323860478,0.12,0.2608695652173913,0.07792207792207792,0.7499134694746931,23.0,77.0,71.0
+historico,solo_casos,random_forest,casos,5,0,1.3221058316909056,regresion,,True,2760,1656,0.0,0.9973377060301941,0.7158449791773803,0.544756324547569,,,,,,,,
+oficial,huecos_cortos,random_forest,alerta,10,1,0.1422063892221626,f1,0.5758318119911571,True,6840,4104,0.0,,,,0.19403561457847102,0.20058997050147492,0.5666666666666667,0.12186379928315412,0.8496747406291835,120.0,558.0,490.0
+oficial,solo_casos,random_forest,casos,5,0,1.1103440242963498,regresion,,True,3420,4104,0.0,0.9305368571167925,0.5963239280659038,0.5797946933860387,,,,,,,,
