@@ -1,92 +1,114 @@
 # Predicción de leishmaniosis cutánea en Cajamarca — Grupo 4
 
-Proyecto del curso de Inteligencia Artificial Aplicada (PUCP). Se predice la leishmaniosis cutánea por distrito y mes en Cajamarca, en dos tareas:
-
-- **Casos:** cuántos casos habrá el mes siguiente (regresión).
-- **Alerta:** si ese mes habrá un brote, es decir, casos por encima de la media del distrito más dos desviaciones estándar (clasificación).
-
-Se usan los casos de vigilancia del CDC-MINSA (2000–2024) y el clima de estaciones SENAMHI (lluvia y temperaturas). Se comparan cinco modelos contra reglas simples.
+Proyecto de Inteligencia Artificial Aplicada (1INF62, PUCP, 2026-2).
 
 **Integrantes:** Dhanny Sebastian Ramirez Rivera, Sergio Estéfano Huamán Noriega, Leonardo Jaime Flores Vera y Franz Javier Vilcapoma Madueño.
 
-## Resultados principales
+## Problema y objetivo
 
-Prueba 2019–2024, 57 distritos, 4 104 filas distrito × mes. Ajuste con 2001–2015 y validación con 2016–2018.
+Cajamarca concentra el 9,3 % de los casos de leishmaniosis notificados en el Perú entre 2000 y 2024. Anticipar cuántos casos tendrá un distrito el mes siguiente, o si vivirá un brote, ayudaría a orientar la búsqueda activa y el control vectorial.
 
-| Modelo | Entradas | RMSE ↓ | MAE ↓ | PR-AUC alertas ↑ |
-|---|---|---:|---:|---:|
-| Lineal (Ridge / Logística) | Solo casos | 0,940 | 0,583 | 0,107 |
-| Árbol de decisión | Solo casos | 0,941 | 0,611 | 0,093 |
-| **Random Forest** (elegido por validación) | Solo casos | **0,926** | 0,598 | 0,120 |
-| Red neuronal MLP | Solo casos | 0,922 | 0,575 | 0,121 |
-| Red convolucional CNN | Solo casos | 0,938 | 0,621 | 0,112 |
-| Regla: siempre cero | — | 1,100 | 0,432 | — |
-| Clasificador al azar | — | — | — | 0,029 |
+El objetivo es comparar cinco modelos de aprendizaje automático en dos tareas por distrito y mes:
 
-Los modelos con casos + clima, la precisión, el recall y las falsas alarmas están en la [tabla comparativa completa](pipeline/results/finales/tabla_comparativa.md).
+- **Casos (regresión):** número de casos del mes siguiente.
+- **Alerta (clasificación):** si ese mes supera la media del distrito más dos desviaciones estándar.
 
-**Conclusiones:**
+También se mide si añadir clima rezagado (lluvia y temperatura) mejora la predicción.
 
-- Random Forest y MLP son los mejores, con diferencias menores al 1 % entre ellos.
-- Los modelos reducen el RMSE alrededor de un 16 % frente a la mejor regla simple ("siempre cero") y detectan alertas unas cuatro veces mejor que el azar.
-- El clima casi no cambia los resultados, porque los datos de SENAMHI disponibles terminan en 2015.
+## Metodología
 
-El análisis completo, con el porqué, las limitaciones y los hallazgos, está en [pipeline/ANALISIS_RESULTADOS.md](pipeline/ANALISIS_RESULTADOS.md).
+1. **Datos:** casos de vigilancia del CDC-MINSA (2000–2024) y clima diario de 26 estaciones SENAMHI, asignadas a cada distrito por cercanía a las localidades con casos.
+2. **Preparación:** panel distrito × mes de 57 distritos con al menos 50 casos en el ajuste; rezagos de casos de 1, 2, 3 y 12 meses, media de 3 meses, estacionalidad y clima de 1 a 3 meses antes. El clima termina en 2015 y se rellenó con el mismo mes de años anteriores.
+3. **Modelos** (`src/models.py`):
+   - lineal (Ridge / regresión logística);
+   - árbol de decisión;
+   - Random Forest;
+   - MLP;
+   - CNN temporal.
+4. **Evaluación** (`src/evaluation.py`):
+   - partición temporal: ajuste 2001–2015, validación 2016–2018, prueba 2019–2024;
+   - métricas: RMSE, MAE, PR-AUC y alertas detectadas;
+   - referencias: reglas simples.
 
-<p>
-  <img src="pipeline/results/finales/fig1_error_por_modelo.png" width="100%" alt="Error por modelo">
-  <img src="pipeline/results/finales/fig2_observado_vs_predicho.png" width="100%" alt="Observado vs predicho">
-</p>
+## Resultados
 
-## Estructura del repositorio
+| Modelo (solo casos) | RMSE ↓ | MAE ↓ | PR-AUC ↑ |
+|---|---:|---:|---:|
+| Lineal | 0,940 | 0,583 | 0,107 |
+| Árbol de decisión | 0,941 | 0,611 | 0,093 |
+| **Random Forest** (elegido por validación) | **0,926** | 0,598 | 0,120 |
+| MLP | 0,922 | 0,575 | 0,121 |
+| CNN | 0,938 | 0,621 | 0,112 |
+| Regla: siempre cero | 1,100 | 0,432 | — |
+| Clasificador al azar | — | — | 0,029 |
+
+- **Mejores modelos:** Random Forest y MLP, empatados en la práctica.
+- **Frente a reglas simples:** reducen el RMSE ~16 % frente a "siempre cero" y detectan alertas ~4 veces mejor que el azar.
+- **Clima:** casi no cambia los resultados, porque los datos de SENAMHI terminan en 2015.
+
+Tabla completa en [`results/metrics.csv`](results/metrics.csv), resumen y análisis en [`results/model_comparison.txt`](results/model_comparison.txt) y paper en [`report.pdf`](report.pdf).
+
+<img src="results/plots/fig2_observado_vs_predicho.png" width="100%" alt="Casos observados vs predichos">
+
+## Estructura
 
 ```text
-├── pipeline/                  # propuesta final, autocontenida y ejecutable
-│   ├── codigo/                # preprocesamiento, integración de clima, modelos y reportes
-│   ├── data/                  # datos crudos (casos, clima, coordenadas) y procesados
-│   ├── results/
-│   │   ├── finales/           # tabla comparativa y gráficos del entregable final
-│   │   ├── experimento_clima/ # métricas, predicciones y diagnósticos de los 5 modelos
-│   │   └── comparacion_70_distritos/
-│   ├── fuentes/               # papers de referencia y decisiones del equipo
-│   ├── ANALISIS_RESULTADOS.md # qué modelo funcionó mejor, por qué, limitaciones
-│   ├── GUIA_DEL_PIPELINE.md   # paso a paso del pipeline
-│   └── DECISIONES_Y_FUENTES.md# justificación y citas de cada decisión
-├── docs/                      # paper académico y presentación
-├── registro_de_pruebas/       # historial de versiones probadas y retiradas (649 filas de métricas)
-└── material_previo/           # EDA, línea base y árbol original del equipo (notebooks, src, papers)
+├── README.md
+├── ENTREGABLE_PARCIAL.md        # checklist semana 8
+├── ENTREGABLE_FINAL.md          # checklist semana 15
+├── data/
+│   ├── raw/                     # casos CDC-MINSA, clima SENAMHI, coordenadas INEI
+│   └── processed/               # paneles distrito × mes con y sin clima
+├── notebooks/
+│   ├── 01_eda.ipynb             # EDA de casos
+│   ├── 01b_eda_clima.ipynb      # EDA de clima e integración
+│   ├── 02_modelos.ipynb         # implementación y comparación de modelos
+│   ├── 03_baseline.ipynb        # líneas base (entregable parcial)
+│   └── 04_arbol_decision.ipynb  # árbol de decisión (entregable parcial)
+├── src/
+│   ├── preprocessing.py         # limpieza y panel mensual
+│   ├── integracion_clima.py     # clima y asignación de estaciones
+│   ├── models.py                # los 5 modelos
+│   ├── evaluation.py            # métricas y evaluación
+│   ├── experimento_clima.py     # entrenamiento y selección por validación
+│   ├── resultados_finales.py    # metrics.csv, plots/ y model_comparison.txt
+│   ├── ejecutar.py              # punto de entrada
+│   └── tests/
+├── results/
+│   ├── metrics.csv              # tabla comparativa
+│   ├── plots/                   # gráficos (EDA, árbol y resultados finales)
+│   ├── model_comparison.txt     # resumen de resultados y análisis
+│   └── experimento_clima/       # métricas, predicciones y diagnósticos completos
+├── papers/                      # paper_integrante1.pdf … paper_integrante4.pdf y resúmenes
+├── docs/                        # guía del pipeline, análisis, decisiones, report.docx
+├── registro_de_pruebas/         # versiones probadas y retiradas
+├── report.pdf                   # paper final
+├── presentation.pdf             # slides
+└── requirements.txt
 ```
 
 ## Cómo ejecutar
 
-Requiere Python 3.12 o superior.
+Requiere Python 3.12 o superior. Todos los comandos se corren desde la raíz del repositorio.
 
 ```bash
-cd pipeline
-python -m pip install -r requirements-lock.txt
+pip install -r requirements.txt          # versiones exactas: requirements-lock.txt
 
-python -m unittest discover -s codigo/tests -v                 # pruebas de integridad
-python codigo/ejecutar.py --modo experimento-v1 --reutilizar-datos   # entrena los 5 modelos (~1-2 min)
-python codigo/resultados_finales.py                             # tabla y gráficos de results/finales/
-python codigo/ejecutar.py --modo equipo70                       # árbol original vs Random Forest, 70 distritos
+python -m unittest discover -s src/tests -v                     # pruebas
+python src/ejecutar.py --modo experimento-v1 --reutilizar-datos  # entrena los 5 modelos (~1-2 min en CPU)
+python src/resultados_finales.py                                 # metrics.csv, plots/ y model_comparison.txt
 ```
 
-`python codigo/ejecutar.py --modo datos` regenera los datasets procesados desde los datos crudos. `python codigo/ejecutar.py --verificar` comprueba los archivos contra `MANIFIESTO.json`. La guía completa está en [pipeline/GUIA_DEL_PIPELINE.md](pipeline/GUIA_DEL_PIPELINE.md).
+Otros modos:
+
+- `python src/ejecutar.py --modo datos`: regenera los datos procesados desde `data/raw/`.
+- `python src/ejecutar.py --modo equipo70`: árbol original vs Random Forest en 70 distritos.
+- `python src/ejecutar.py --verificar`: comprueba los archivos contra `MANIFIESTO.json`.
+
+Los notebooks se abren con `jupyter notebook notebooks/`. La guía paso a paso está en [`docs/GUIA_DEL_PIPELINE.md`](docs/GUIA_DEL_PIPELINE.md).
 
 ## Datos y fuentes
 
-- Casos: [datos abiertos de vigilancia de leishmaniosis, CDC-MINSA](pipeline/data/raw/descripcion_dataset_leishmaniosis.md).
-- Clima y coordenadas: [estaciones SENAMHI, centros poblados y distritos del INEI](pipeline/data/raw/external/FUENTES.md).
-- Papers de referencia: [pipeline/fuentes/papers/](pipeline/fuentes/papers/).
-
-## Comparación adicional: 70 distritos
-
-Reproduce el árbol de decisión original del equipo sobre los mismos 70 distritos y las mismas 5 040 filas de prueba:
-
-| Modelo | RMSE | MAE |
-|---|---:|---:|
-| Árbol original, solo casos | 0,907 | 0,576 |
-| Random Forest, solo casos | 0,892 | 0,565 |
-| Random Forest, clima con imputación estacional del 52 % | 0,891 | 0,566 |
-
-Los números no son comparables con la tabla principal porque usan otro grupo de distritos. Fuente: [D23](pipeline/DECISIONES_Y_FUENTES.md#d23).
+- Casos: [vigilancia de leishmaniosis, CDC-MINSA](data/raw/descripcion_dataset_leishmaniosis.md) (datos abiertos).
+- Clima y coordenadas: [SENAMHI e INEI](data/raw/external/FUENTES.md).
+- Papers revisados: [`papers/`](papers/).

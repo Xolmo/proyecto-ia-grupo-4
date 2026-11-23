@@ -1,2 +1,4 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Preserve exact bytes covered by MANIFIESTO.json across clone/checkout.
+* -text
+* whitespace=cr-at-eol
+data/** whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
