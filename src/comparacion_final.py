@@ -15,7 +15,8 @@ EER (equal error rate): tasa de error donde la de falsas alarmas (FPR) iguala a 
 de brotes no detectados (FNR); menor es mejor. Accuracy se informa, pero con ~3 %
 de alertas la regla «nunca alertar» ya obtiene ~97 %, por eso no se usa para elegir.
 
-No modifica ningún archivo existente: escribe en ``results/comparacion_final/``.
+No modifica ningún archivo existente: escribe en ``results/comparacion_final/`` (tablas) y
+``results/plots/comparacion_final_*.png`` (gráficos).
 
 Uso (desde la raíz del repositorio)::
 
@@ -32,6 +33,7 @@ from sklearn.metrics import (average_precision_score, confusion_matrix, f1_score
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "results/comparacion_final"
+PLOTS = ROOT / "results/plots"
 TEAM = ROOT / "results/experimento_clima"
 PAPER2 = {"oficial": ROOT / "results/paper2", "historico": ROOT / "results/paper2_historico"}
 PAPER4 = {"oficial": ROOT / "results/paper4", "historico": ROOT / "results/paper4_historico"}
@@ -156,7 +158,7 @@ def plot(table, refs, protocol):
     fig.legend(handles, present, loc="upper right")
     fig.suptitle(f"Comparación de modelos, protocolo {protocol}")
     fig.tight_layout()
-    fig.savefig(OUT / f"comparacion_{protocol}.png", dpi=130)
+    fig.savefig(PLOTS / f"comparacion_final_{protocol}.png", dpi=130)
     plt.close(fig)
 
 
@@ -170,6 +172,7 @@ def to_markdown(df, cols, fmt):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    PLOTS.mkdir(parents=True, exist_ok=True)
     fmt = {c: "{:.3f}" for c in ["RMSE_validacion", "RMSE", "MAE", "MASE", "PR_AUC", "ROC_AUC", "EER",
                                   "accuracy", "recall", "precision", "FPR", "F1", "RMSE_media_semillas", "RMSE_sd_semillas"]}
     md = ["# Comparación final de modelos (equipo + paper 2 + paper 4)", "",

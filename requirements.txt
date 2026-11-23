@@ -1,6 +1,6 @@
 # Dependencias del proyecto (Python 3.12 o superior).
 # Instalar con: pip install -r requirements.txt
-# Versiones exactas probadas: requirements-lock.txt
+# Probado con Python 3.12, numpy 2.5, pandas 3.1, scikit-learn 1.9, torch 2.15, xgboost 3.
 
 # Datos y cálculo
 numpy>=1.24
@@ -15,6 +15,11 @@ threadpoolctl>=3.1
 # Gráficos
 matplotlib>=3.7
 seaborn>=0.12
+
+# Réplica del paper 1 (XGBoost + optimización bayesiana)
+# En macOS, xgboost requiere: brew install libomp
+xgboost>=3.0
+optuna>=4.0
 
 # Notebooks de EDA y línea base
 statsmodels>=0.14

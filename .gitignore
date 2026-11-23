@@ -4,5 +4,4 @@ __pycache__/
 *.pyc
 tmp/
 data/processed/
-registro_de_pruebas/artefactos_historicos/**/predicciones.csv
 .DS_Store

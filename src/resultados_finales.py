@@ -366,7 +366,7 @@ def write_comparison(t, m, sel, pred, share):
         "- Se excluyen distritos con menos de 50 casos hasta 2015.",
         "- La alerta (media + 2 DE) es una convención; el puntaje no está calibrado.",
         "- Predicción a un mes con los casos reales del mes anterior; no se evalúa a varios meses.",
-        "", "Análisis extendido: docs/ANALISIS_RESULTADOS.md. Paper: report.pdf.", "",
+        "", "Análisis extendido: results/analisis/ANALISIS_RESULTADOS.md. Paper: report.pdf.", "",
     ]
     (OUT / "model_comparison.txt").write_text("\n".join(lines), encoding="utf-8")
 

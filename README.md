@@ -75,6 +75,9 @@ Tabla completa en [`results/metrics.csv`](results/metrics.csv), resumen y análi
 │   ├── evaluation.py            # métricas y evaluación
 │   ├── experimento_clima.py     # entrenamiento y selección por validación
 │   ├── resultados_finales.py    # metrics.csv, plots/ y model_comparison.txt
+│   ├── reporte_experimento_clima.py, verificar_experimento_clima.py  # informe y auditoría del experimento
+│   ├── comparacion_70_distritos.py  # árbol original vs Random Forest en 70 distritos
+│   ├── p1_adams.py              # XGBoost del paper 1 (Adams et al.)
 │   ├── modelo_paper2.py         # redes SFNN1/SFNN2/DFNN del paper 2
 │   ├── modelo_paper4.py         # SARIMA del paper 4 (Box-Jenkins, AIC, Ljung-Box)
 │   ├── comparacion_final.py     # equipo + papers 2 y 4: accuracy, ROC-AUC, EER, matriz de confusión
@@ -82,15 +85,16 @@ Tabla completa en [`results/metrics.csv`](results/metrics.csv), resumen y análi
 │   └── tests/
 ├── results/
 │   ├── metrics.csv              # tabla comparativa
-│   ├── plots/                   # gráficos (EDA, árbol y resultados finales)
+│   ├── plots/                   # todos los gráficos (EDA, árbol, resultados finales, papers)
 │   ├── model_comparison.txt     # resumen de resultados y análisis
+│   ├── analisis/                # análisis extendido de resultados y de las réplicas de los papers 2 y 4
 │   ├── experimento_clima/       # métricas, predicciones y diagnósticos completos
+│   ├── comparacion_70_distritos/  # árbol original vs Random Forest
+│   ├── p1_adams/                # XGBoost del paper 1 (métricas, predicciones, SHAP)
 │   ├── paper2/, paper2_historico/  # redes del paper 2 (métricas, validación, predicciones)
 │   ├── paper4/, paper4_historico/  # SARIMA del paper 4 (métricas, órdenes por distrito, predicciones)
-│   └── comparacion_final/       # tabla y gráficos equipo + papers 2 y 4
+│   └── comparacion_final/       # tablas equipo + papers 2 y 4
 ├── papers/                      # paper_integrante1.pdf … paper_integrante4.pdf y resúmenes
-├── docs/                        # guía del pipeline, análisis, decisiones, report.docx
-├── registro_de_pruebas/         # versiones probadas y retiradas
 ├── report.pdf                   # paper final
 ├── presentation.pdf             # slides
 └── requirements.txt
@@ -101,7 +105,7 @@ Tabla completa en [`results/metrics.csv`](results/metrics.csv), resumen y análi
 Requiere Python 3.12 o superior. Todos los comandos se corren desde la raíz del repositorio.
 
 ```bash
-pip install -r requirements.txt          # versiones exactas: requirements-lock.txt
+pip install -r requirements.txt          # en macOS, xgboost requiere: brew install libomp
 
 python -m unittest discover -s src/tests -v                     # pruebas
 python src/ejecutar.py --modo experimento-v1 --reutilizar-datos  # entrena los 5 modelos (~1-2 min en CPU)
@@ -113,16 +117,17 @@ python src/modelo_paper2.py --protocolo historico
 # Réplica del paper 4, SARIMA (≈1 min por protocolo)
 python src/modelo_paper4.py
 python src/modelo_paper4.py --protocolo historico
-python src/comparacion_final.py                                  # results/comparacion_final/
+python src/comparacion_final.py                                  # results/comparacion_final/ y plots/comparacion_final_*.png
 ```
+
+La réplica del paper 1 (XGBoost) se ejecuta desde `notebooks/05_paper_integrante1_xgboost.ipynb`, que usa `src/p1_adams.py`.
 
 Otros modos:
 
 - `python src/ejecutar.py --modo datos`: regenera los datos procesados desde `data/raw/`.
 - `python src/ejecutar.py --modo equipo70`: árbol original vs Random Forest en 70 distritos.
-- `python src/ejecutar.py --verificar`: comprueba los archivos contra `MANIFIESTO.json`.
 
-Los notebooks se abren con `jupyter notebook notebooks/`. La guía paso a paso está en [`docs/GUIA_DEL_PIPELINE.md`](docs/GUIA_DEL_PIPELINE.md).
+Los notebooks se abren con `jupyter notebook notebooks/`. El análisis extendido está en [`results/analisis/`](results/analisis/).
 
 ## Datos y fuentes
 

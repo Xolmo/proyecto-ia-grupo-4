@@ -1,5 +1,0 @@
-# Preserve archived bytes and their original SHA-256 evidence.
-* -text
-* whitespace=cr-at-eol,-blank-at-eof
-# Historical Markdown snapshots intentionally preserve original trailing lines.
-metodos_historicos/*.md whitespace=-blank-at-eof

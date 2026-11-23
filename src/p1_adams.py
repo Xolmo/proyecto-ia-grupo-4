@@ -2,7 +2,7 @@
 
 Adams Q. H. et al. (2025). Evaluating the contribution of weather variables to
 machine learning forecasts of visceral leishmaniasis in Brazil. Environ. Res.:
-Health 3 045012. PDF en papers/paper_integrante 1.pdf.
+Health 3 045012. PDF en papers/paper_integrante1.pdf.
 
 Qué se replica del paper (§2.2-2.3):
   * XGBoost de regresión (casos) y de clasificación (riesgo por umbral).
@@ -24,9 +24,10 @@ Adaptaciones explícitas (no son del paper):
     réplica literal por distrito queda disponible con por_distrito=True.
   * Hiperparámetros elegidos solo con ventanas de validación, nunca de prueba.
 
-Entradas: se leen del pipeline base del equipo (carpeta "pipeline propuesta 17-11"),
-que ya limpia los casos, asigna estaciones SENAMHI y resume el clima por mes. Esa
-carpeta no se modifica.
+Entradas: se leen del pipeline base del equipo (src/ y data/processed/), que ya
+limpia los casos, asigna estaciones SENAMHI y resume el clima por mes. Salidas:
+tablas en results/p1_adams/; los gráficos los guarda el notebook 05 en
+results/plots/p1_*.png.
 """
 from __future__ import annotations
 
@@ -43,7 +44,7 @@ from sklearn.metrics import (average_precision_score, f1_score, mean_absolute_er
 import preprocessing as pp
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = ROOT / "pipeline propuesta 17-11"   # pipeline base del equipo
+BASE = ROOT                      # datos del pipeline base del equipo
 RAW = BASE / "data/raw/datos_abiertos_vigilancia_leishmaniosis_2000_2024.csv"
 EXTERNAL = BASE / "data/raw/external"
 PROCESSED = BASE / "data/processed"

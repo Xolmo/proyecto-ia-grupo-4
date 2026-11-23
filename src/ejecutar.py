@@ -1,36 +1,16 @@
-"""Entrada única del V1 conservado. No depende del src del repositorio."""
+"""Punto de entrada del pipeline: regenera datos, entrena los cinco modelos o reproduce la comparación de 70 distritos."""
 import argparse
-import hashlib
-import json
 import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def verify():
-    manifest = ROOT/'MANIFIESTO.json'
-    if not manifest.exists():
-        raise SystemExit('Falta MANIFIESTO.json; no se puede certificar esta copia.')
-    records = json.loads(manifest.read_text(encoding='utf-8'))
-    for record in records:
-        p = (ROOT/record['path']).resolve()
-        if not p.is_relative_to(ROOT) or not p.is_file():
-            raise SystemExit(f'Archivo ausente o fuera del paquete: {p}')
-        if hashlib.sha256(p.read_bytes()).hexdigest() != record['sha256']:
-            raise SystemExit(f'Contenido modificado: {p}')
-    print(json.dumps(dict(status='OK', files=len(records), self_contained=True), ensure_ascii=False))
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--modo', choices=['equipo70','experimento-v1','datos'], default='equipo70')
-    parser.add_argument('--verificar', action='store_true', help='Verificar hashes sin entrenar')
     parser.add_argument('--reutilizar-datos', action='store_true')
     args = parser.parse_args()
-    if args.verificar:
-        verify()
-        return
     os.chdir(ROOT)
     import pandas as pd
     import torch
