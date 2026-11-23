@@ -17,6 +17,7 @@
 | Implementación y comparación en notebook | ✅ | `notebooks/02_modelos.ipynb` (ejecutado, con salidas) |
 | Paper / reporte académico (3–5 páginas, APA) | ✅ | `report.pdf`: cuerpo de 5 páginas, más portada, resumen y referencias (editable: `docs/report.docx`) |
 | Réplica del paper 2 (redes SFNN/DFNN) y comparación con el equipo | ✅ | `src/modelo_paper2.py`, `src/comparacion_final.py`, `notebooks/06_paper_integrante2_redes.ipynb`, `results/comparacion_final/`, `docs/ANALISIS_PAPER2.md` |
+| Réplica del paper 4 (SARIMA, El Alaoui et al.) | ✅ | `src/modelo_paper4.py`, `notebooks/07_paper_integrante4_sarima.ipynb`, `results/paper4/`, `results/paper4_historico/`, `docs/ANALISIS_PAPER4.md`; incluido en `results/comparacion_final/` |
 | Presentación (máximo 5 minutos) | ⏳ | `presentation.pdf` |
 | Papers revisados (1 por integrante) | ✅ | `papers/paper_integrante1.pdf` a `paper_integrante4.pdf` |
 

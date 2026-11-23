@@ -66,7 +66,8 @@ Tabla completa en [`results/metrics.csv`](results/metrics.csv), resumen y análi
 │   ├── 03_baseline.ipynb        # líneas base (entregable parcial)
 │   ├── 04_arbol_decision.ipynb  # árbol de decisión (entregable parcial)
 │   ├── 05_paper_integrante1_xgboost.ipynb  # réplica del paper 1 (XGBoost)
-│   └── 06_paper_integrante2_redes.ipynb    # réplica del paper 2 (SFNN/DFNN)
+│   ├── 06_paper_integrante2_redes.ipynb    # réplica del paper 2 (SFNN/DFNN)
+│   └── 07_paper_integrante4_sarima.ipynb   # réplica del paper 4 (SARIMA)
 ├── src/
 │   ├── preprocessing.py         # limpieza y panel mensual
 │   ├── integracion_clima.py     # clima y asignación de estaciones
@@ -75,7 +76,8 @@ Tabla completa en [`results/metrics.csv`](results/metrics.csv), resumen y análi
 │   ├── experimento_clima.py     # entrenamiento y selección por validación
 │   ├── resultados_finales.py    # metrics.csv, plots/ y model_comparison.txt
 │   ├── modelo_paper2.py         # redes SFNN1/SFNN2/DFNN del paper 2
-│   ├── comparacion_final.py     # equipo + paper 2: accuracy, ROC-AUC, EER, matriz de confusión
+│   ├── modelo_paper4.py         # SARIMA del paper 4 (Box-Jenkins, AIC, Ljung-Box)
+│   ├── comparacion_final.py     # equipo + papers 2 y 4: accuracy, ROC-AUC, EER, matriz de confusión
 │   ├── ejecutar.py              # punto de entrada
 │   └── tests/
 ├── results/
@@ -84,7 +86,8 @@ Tabla completa en [`results/metrics.csv`](results/metrics.csv), resumen y análi
 │   ├── model_comparison.txt     # resumen de resultados y análisis
 │   ├── experimento_clima/       # métricas, predicciones y diagnósticos completos
 │   ├── paper2/, paper2_historico/  # redes del paper 2 (métricas, validación, predicciones)
-│   └── comparacion_final/       # tabla y gráficos equipo + paper 2
+│   ├── paper4/, paper4_historico/  # SARIMA del paper 4 (métricas, órdenes por distrito, predicciones)
+│   └── comparacion_final/       # tabla y gráficos equipo + papers 2 y 4
 ├── papers/                      # paper_integrante1.pdf … paper_integrante4.pdf y resúmenes
 ├── docs/                        # guía del pipeline, análisis, decisiones, report.docx
 ├── registro_de_pruebas/         # versiones probadas y retiradas
@@ -107,6 +110,9 @@ python src/resultados_finales.py                                 # metrics.csv, 
 # Réplica del paper 2 (≈50 min el oficial y ≈35 min el histórico; pueden correr en paralelo)
 python src/modelo_paper2.py
 python src/modelo_paper2.py --protocolo historico
+# Réplica del paper 4, SARIMA (≈1 min por protocolo)
+python src/modelo_paper4.py
+python src/modelo_paper4.py --protocolo historico
 python src/comparacion_final.py                                  # results/comparacion_final/
 ```
 

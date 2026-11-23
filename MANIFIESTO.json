@@ -225,6 +225,11 @@
     "sha256": "a87cff38c300aef5f46bd867519b027fd1f8de75606ebecd59f50b6a04fd5828"
   },
   {
+    "path": "data/raw/clima/clima_cajamarca.csv",
+    "bytes": 25987663,
+    "sha256": "ce135cd9bd01381ef41a76ca1ebc600cdfda0220e13cc3ca81144742f99fa39a"
+  },
+  {
     "path": "data/raw/clima/cusco/qc00000607 - granja kcayra.txt",
     "bytes": 420975,
     "sha256": "91e9478123a98571e0c631335346d81dbcf7d6c32670a27c6640cc72e7b504db"
@@ -405,6 +410,31 @@
     "sha256": "fc2f260624d9c7ff88741aacb5de825185f2802bece8163eceee60b1e8172522"
   },
   {
+    "path": "results/comparacion_final/comparacion_historico.png",
+    "bytes": 140800,
+    "sha256": "933f70b335e33cf795b733b747c158a29a62649c065855374b740b646e309887"
+  },
+  {
+    "path": "results/comparacion_final/comparacion_oficial.png",
+    "bytes": 138007,
+    "sha256": "6dbd606bec6ace87922b9b74aea8acebc65d6e86366cb9b8cba23797eb9d796d"
+  },
+  {
+    "path": "results/comparacion_final/metricas_historico.csv",
+    "bytes": 8420,
+    "sha256": "0ead34f589b838397b41dffac585bfe2d2326b184f86ae317805955456dd4d0a"
+  },
+  {
+    "path": "results/comparacion_final/metricas_oficial.csv",
+    "bytes": 8129,
+    "sha256": "6bd0dbf892c6e3c728ab2cd79f37baae2a81105471ed3165a51d3b40b6b9e040"
+  },
+  {
+    "path": "results/comparacion_final/tabla_comparativa_final.md",
+    "bytes": 13333,
+    "sha256": "3cd02499a29a0cda437f3e3db2cb6a1b7bb927d1d26c8e2d56baae54a7a61be9"
+  },
+  {
     "path": "results/experimento_clima/RESULTADOS.md",
     "bytes": 8319,
     "sha256": "c41d179059b23f0ddf4cfdcfb5d1d75f4fd5634a209c84069cf2c72535f6745d"
@@ -463,6 +493,181 @@
     "path": "results/model_comparison.txt",
     "bytes": 4821,
     "sha256": "656582ac9d19bc83d826ea5f36d5a055db2ff0998edd095fd9755a98313e1890"
+  },
+  {
+    "path": "results/p1_adams/e1_metricas.csv",
+    "bytes": 1159,
+    "sha256": "dd64e12ad98e5e24033cca928928d3f7d1a33c6245db23f8e2ed6fd9329d037c"
+  },
+  {
+    "path": "results/p1_adams/e1_predicciones.csv",
+    "bytes": 652827,
+    "sha256": "d7e54a40aee25344ff0f9148ea1be81996123ab125fac599b2472cc23fd55a29"
+  },
+  {
+    "path": "results/p1_adams/e2_cobertura_distritos.csv",
+    "bytes": 30181,
+    "sha256": "9c5a3ab61361b06599b4972c7d21afed1a2f68762d14aabb79c9411b18aba491"
+  },
+  {
+    "path": "results/p1_adams/e2_metricas.csv",
+    "bytes": 907,
+    "sha256": "4216d645aceb1bddd335fdf9133e288d0af032ad9083cf9786d5786368631847"
+  },
+  {
+    "path": "results/p1_adams/e2_predicciones.csv",
+    "bytes": 2700075,
+    "sha256": "33171553d50335cf8826eb6a6e73e71c5d9380524cf29df983db26da7055d14f"
+  },
+  {
+    "path": "results/p1_adams/e2b_por_distrito_top4.csv",
+    "bytes": 674,
+    "sha256": "54e6b76f269ceb2f32394c14672d9e32b44456dd2cbe9a0d9b575445cdf4f620"
+  },
+  {
+    "path": "results/p1_adams/e3_metricas.csv",
+    "bytes": 1116,
+    "sha256": "4ff03c6f11ff2d9709164e3c4be855762e6d48623eb8514b6b0691d4a009a63a"
+  },
+  {
+    "path": "results/p1_adams/e4_distritos.csv",
+    "bytes": 11755,
+    "sha256": "464c874856b4f10348900155c84d5bc4bc069f6593a432454fe1dd98d41e4885"
+  },
+  {
+    "path": "results/p1_adams/e4_metricas.csv",
+    "bytes": 1948,
+    "sha256": "01adf538abe885f459573992614e380f15d37f713c03aaaea8a32ae24d575201"
+  },
+  {
+    "path": "results/p1_adams/e5_shap_clima_h1.csv",
+    "bytes": 2237,
+    "sha256": "38be43f2fd875f017b450dcc38a11b0df14f5591a8abea839cbb0124c1cf5cf1"
+  },
+  {
+    "path": "results/p1_adams/e5_shap_riesgo_U2.4_h3.csv",
+    "bytes": 932,
+    "sha256": "0f012bf867201849adc6f9d4165756700945a4bb9123cebdfb415bb33afef825"
+  },
+  {
+    "path": "results/p1_adams/e5_spearman.json",
+    "bytes": 150,
+    "sha256": "f52f8d817c96153248a73ccf1d987072c4f9266fe362fb6c7e6bd903c555fbc6"
+  },
+  {
+    "path": "results/p1_adams/ejecucion.json",
+    "bytes": 189,
+    "sha256": "0917b8aa13855061cd631b9e75c4235012387141b8a9146713e50bfa3726376f"
+  },
+  {
+    "path": "results/p1_adams/hiperparametros.json",
+    "bytes": 6406,
+    "sha256": "d876f2c718857959baa1e582ce569aad8605f66604c8bdf8a1da618343d9ef43"
+  },
+  {
+    "path": "results/p1_adams/plots/e1_rmse.png",
+    "bytes": 88639,
+    "sha256": "34337cc58228ba296a2e749411c52f4f62901347d2d0815fa1b447eccb3d37ec"
+  },
+  {
+    "path": "results/p1_adams/plots/e2_cobertura.png",
+    "bytes": 43421,
+    "sha256": "a93cecef8bb60ded26711459aa12a53962b12f2d2ef0b626fae611e5e25e5594"
+  },
+  {
+    "path": "results/p1_adams/plots/e2_series_top4.png",
+    "bytes": 254689,
+    "sha256": "fdb8469e19b4fa4ad3d658a00e63649b0b628881fc1960370b3ec566313964ca"
+  },
+  {
+    "path": "results/p1_adams/plots/e3_clima.png",
+    "bytes": 112356,
+    "sha256": "945526c0890e274a6dbec2148cf0ab7833779e7ca421f9cde9a168dfe29506a9"
+  },
+  {
+    "path": "results/p1_adams/plots/e4_distritos.png",
+    "bytes": 53242,
+    "sha256": "0bedb39ddf9aeeb14f3c07a3f4343c6d0a6ccacd38a976378da4f06427e5861e"
+  },
+  {
+    "path": "results/p1_adams/plots/e5_shap_clima.png",
+    "bytes": 102433,
+    "sha256": "d7816d8d809659380f2fc21e35b123e1c8cff70ae38e5d8be1fd0d2d5be324c1"
+  },
+  {
+    "path": "results/p1_adams/plots/e5_shap_riesgo.png",
+    "bytes": 93091,
+    "sha256": "4eee1f9d89b468563588775159c2f84d593cb08769b8dd15d3c6a1d795706db4"
+  },
+  {
+    "path": "results/paper2/metricas.csv",
+    "bytes": 3401,
+    "sha256": "f3a3702279aa1cb5c9b55b702e7ac3cdf20b10d6896e76f475a109d35fe1cd38"
+  },
+  {
+    "path": "results/paper2/predicciones.csv",
+    "bytes": 3780158,
+    "sha256": "a2a72c73e5b3b104bc7ccb9f6e7162925202c7017f522ec2c25413f85e4b8d3d"
+  },
+  {
+    "path": "results/paper2/validacion.csv",
+    "bytes": 14287,
+    "sha256": "6205da3af2232b52aebb192e268cd33393b9e5f0924de490296522e166920629"
+  },
+  {
+    "path": "results/paper2_historico/metricas.csv",
+    "bytes": 3487,
+    "sha256": "da46689fde5e555a2245a251de8e3a93944cf82b039cbe3e3c9d6b3c8beae25d"
+  },
+  {
+    "path": "results/paper2_historico/predicciones.csv",
+    "bytes": 1513499,
+    "sha256": "a443096bd5c73f02e349a24001dd01a4524dc7535de7f3fe8d07bb2cd9a47952"
+  },
+  {
+    "path": "results/paper2_historico/validacion.csv",
+    "bytes": 14279,
+    "sha256": "b28921cb827f7242ffd2e3541723cfac09e82f53273917487e52ce6934bf1c9a"
+  },
+  {
+    "path": "results/paper4/metricas.csv",
+    "bytes": 686,
+    "sha256": "30537add5a783356174d95474d1fbb4fee2e05f86972b29d45d11921733b21cf"
+  },
+  {
+    "path": "results/paper4/ordenes_por_distrito.csv",
+    "bytes": 4054,
+    "sha256": "d3c95b3de3d1169f691d8ed402b7d26576565f0ae37494922fc92a29a975a20b"
+  },
+  {
+    "path": "results/paper4/predicciones.csv",
+    "bytes": 609092,
+    "sha256": "52464dfda5211ff611259af0acd276e94db33f4a39c87dcc983291fbad0b5e4c"
+  },
+  {
+    "path": "results/paper4/validacion.csv",
+    "bytes": 147,
+    "sha256": "f01a2035db67216cd91f0c9d262c7166503a0d000b381e2009cf4f80dd203485"
+  },
+  {
+    "path": "results/paper4_historico/metricas.csv",
+    "bytes": 700,
+    "sha256": "a776b320393eca11a95f929aa91574045dd641c429b880136c0d6c4c26a0e1c9"
+  },
+  {
+    "path": "results/paper4_historico/ordenes_por_distrito.csv",
+    "bytes": 3298,
+    "sha256": "a54d4bd9f5fa98238a8dbc9f6065d592d0d4c492e4dab3b49faf7e8b2e638d79"
+  },
+  {
+    "path": "results/paper4_historico/predicciones.csv",
+    "bytes": 243980,
+    "sha256": "7eb82e2346e722c63f65ef05906e34bdebac3bfd6f3dfde09fb3db03413af8c9"
+  },
+  {
+    "path": "results/paper4_historico/validacion.csv",
+    "bytes": 147,
+    "sha256": "48ae127948e204d2019f5578e95cdd43cc1e21eb59bc0bdfb4676d856195c17d"
   },
   {
     "path": "results/plots/arbol_alertas.png",
@@ -560,6 +765,11 @@
     "sha256": "b5321866dd245c5797932bfa071869bac3e7e00e4686bb7b4d9a10f388ae2fbf"
   },
   {
+    "path": "src/comparacion_final.py",
+    "bytes": 11253,
+    "sha256": "52b4702b1b425b43fad25d40cfdcfe6aa813ba07c6f1c54890032b5682928f55"
+  },
+  {
     "path": "src/ejecutar.py",
     "bytes": 2618,
     "sha256": "7bebf79c1a8c0db5ac2cb4b247d975484c58479a5c0f402f90a8b5b614c12fc8"
@@ -580,9 +790,24 @@
     "sha256": "901487b0cb3e2ba03a84b133360a8f88fcbd2e71f3f8f833940018b1ef038d24"
   },
   {
+    "path": "src/modelo_paper2.py",
+    "bytes": 9985,
+    "sha256": "9243a80cc89c17bf857238ccba628f3f27b8c195638973456f924dec2c1d0ff4"
+  },
+  {
+    "path": "src/modelo_paper4.py",
+    "bytes": 9470,
+    "sha256": "2c228a26fc5f10565605957908b86a9998b41ba2df973217f8f4e5746596666b"
+  },
+  {
     "path": "src/models.py",
     "bytes": 7058,
     "sha256": "0c25ac649b05a8030e1347664ca32fe0c445337f7cbec47b9d203eb5154af330"
+  },
+  {
+    "path": "src/p1_adams.py",
+    "bytes": 24036,
+    "sha256": "e558c2c1be87f7606fc57aa02e2e36fbe817b7cb752bab2d3abf02467117f7cf"
   },
   {
     "path": "src/preprocessing.py",
@@ -603,6 +828,16 @@
     "path": "src/tests/test_experimento_clima.py",
     "bytes": 3599,
     "sha256": "88b50a6c6faf9cec108553b69adce7f89c074f5015d5d71d3aeb39c0365a6069"
+  },
+  {
+    "path": "src/tests/test_modelo_paper2.py",
+    "bytes": 3106,
+    "sha256": "d1342b7282c4d603bdd1a9bc8c88978667a814ef0b34426143f4f7ca1d8580d6"
+  },
+  {
+    "path": "src/tests/test_modelo_paper4.py",
+    "bytes": 1486,
+    "sha256": "f49aec591f757b4f022c391f9d5d61f52e0c078232c9e80a63af967469cdec7b"
   },
   {
     "path": "src/verificar_experimento_clima.py",

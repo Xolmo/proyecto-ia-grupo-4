@@ -1,0 +1,3 @@
+modelo,entradas,orden,val_RMSE
+SARIMA_paper,casos,"(0,1,0)(1,1,0)12",1.5155857295983293
+SARIMA_AIC,casos,menor AIC por distrito,1.1583106199178863
