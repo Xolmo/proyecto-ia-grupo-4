@@ -1,0 +1,20 @@
+variable,media_abs_shap,grupo
+media36_lag3,2.8150637,promedio de 36 meses
+est_pct_urbano,0.6247379,variable fija del distrito
+est_longitud,0.332987,variable fija del distrito
+est_latitud,0.11341775,variable fija del distrito
+casos_lag12,0.1070815,casos de meses anteriores
+est_altitud,0.06910458,variable fija del distrito
+casos_lag8,0.05534842,casos de meses anteriores
+mes_sin,0.046014797,mes del año
+casos_lag11,0.040707152,casos de meses anteriores
+casos_lag9,0.032631546,casos de meses anteriores
+casos_lag14,0.032621313,casos de meses anteriores
+casos_lag4,0.018704357,casos de meses anteriores
+casos_lag5,0.018630171,casos de meses anteriores
+casos_lag13,0.017261475,casos de meses anteriores
+casos_lag7,0.014391493,casos de meses anteriores
+casos_lag3,0.013828836,casos de meses anteriores
+mes_cos,0.009598444,mes del año
+casos_lag6,0.004531629,casos de meses anteriores
+casos_lag10,0.0041320724,casos de meses anteriores

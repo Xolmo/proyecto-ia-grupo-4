@@ -1,0 +1,47 @@
+variable,media_abs_shap,grupo
+media36_lag1,0.17122464,promedio de 36 meses
+casos_lag1,0.07529392,casos de meses anteriores
+mes_sin,0.055341214,mes del año
+casos_lag2,0.04557935,casos de meses anteriores
+casos_lag3,0.04458757,casos de meses anteriores
+pp_total_mm_lag1_x_altitud,0.03925388,clima × variable fija
+pp_total_mm_lag2,0.030674893,clima (SENAMHI)
+pp_total_mm_lag5,0.02567712,clima (SENAMHI)
+tmax_media_lag1_x_pct_urbano,0.024284847,clima × variable fija
+tmax_media_lag6,0.02406466,clima (SENAMHI)
+est_latitud,0.024040855,variable fija del distrito
+pp_total_mm_lag1,0.022444297,clima (SENAMHI)
+tmax_media_lag7,0.021709906,clima (SENAMHI)
+pp_total_mm_lag3,0.021153867,clima (SENAMHI)
+pp_total_mm_lag4,0.020926813,clima (SENAMHI)
+pp_total_mm_lag1_x_pct_urbano,0.020724403,clima × variable fija
+tmax_media_lag1,0.020718921,clima (SENAMHI)
+tmax_media_lag5,0.01997809,clima (SENAMHI)
+casos_lag12,0.01963098,casos de meses anteriores
+casos_lag9,0.01854237,casos de meses anteriores
+casos_lag8,0.018504066,casos de meses anteriores
+pp_total_mm_lag7,0.018001843,clima (SENAMHI)
+tmax_media_lag1_x_altitud,0.016821587,clima × variable fija
+tmin_media_lag3,0.01604632,clima (SENAMHI)
+casos_lag11,0.015859284,casos de meses anteriores
+est_longitud,0.015834333,variable fija del distrito
+tmin_media_lag1_x_pct_urbano,0.015578076,clima × variable fija
+tmin_media_lag5,0.01476758,clima (SENAMHI)
+tmin_media_lag6,0.014692028,clima (SENAMHI)
+pp_total_mm_lag6,0.014295908,clima (SENAMHI)
+tmin_media_lag1_x_altitud,0.01404577,clima × variable fija
+tmin_media_lag7,0.013039909,clima (SENAMHI)
+casos_lag4,0.012988091,casos de meses anteriores
+casos_lag5,0.012758079,casos de meses anteriores
+mes_cos,0.012688631,mes del año
+casos_lag7,0.012491454,casos de meses anteriores
+tmax_media_lag3,0.012379901,clima (SENAMHI)
+est_pct_urbano,0.010747755,variable fija del distrito
+tmax_media_lag2,0.010541061,clima (SENAMHI)
+tmin_media_lag2,0.010499996,clima (SENAMHI)
+tmax_media_lag4,0.010159834,clima (SENAMHI)
+tmin_media_lag4,0.009847702,clima (SENAMHI)
+casos_lag10,0.009366809,casos de meses anteriores
+tmin_media_lag1,0.009186213,clima (SENAMHI)
+casos_lag6,0.008941066,casos de meses anteriores
+est_altitud,0.0036361874,variable fija del distrito

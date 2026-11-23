@@ -1,0 +1,13 @@
+horizonte (meses),modelo,variables,RMSE,MAE,filas
+1,Equipo · Random Forest · solo casos,,1.015905213971922,0.7184536747483824,1656
+1,Equipo · árbol de decisión · solo casos,,1.0163086157142196,0.7217296478532486,1656
+1,Equipo · Random Forest · con clima sin rellenar,,1.0293497024678313,0.7322120529598023,1656
+1,Equipo · árbol de decisión · con clima sin rellenar,,1.0349251980858774,0.7360509395243456,1656
+1,Equipo · Random Forest · con clima rellenado al 52 %,,1.0394296278307196,0.7453593636791375,1656
+1,XGBoost · solo casos,19.0,1.0486105536970147,0.6886319796522969,1656
+1,XGBoost · con clima sin rellenar,46.0,1.0543064036756131,0.70842608273806,1656
+1,Equipo · árbol de decisión · con clima rellenado al 52 %,,1.0628673592667772,0.7676887722516348,1656
+1,XGBoost · con clima rellenado al 52 %,46.0,1.082016730736231,0.7297624577692224,1656
+3,XGBoost · solo casos,19.0,1.0708651952902415,0.7124457486503328,1656
+3,XGBoost · con clima sin rellenar,46.0,1.0896054384977627,0.7434418877049075,1656
+3,XGBoost · con clima rellenado al 52 %,46.0,1.0941396525393747,0.7347398903548485,1656
