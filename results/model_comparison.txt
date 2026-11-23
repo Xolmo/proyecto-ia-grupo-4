@@ -1,0 +1,73 @@
+RESUMEN DE RESULTADOS Y ANÁLISIS — Grupo 4, leishmaniosis cutánea en Cajamarca
+==============================================================================
+
+Protocolo: ajuste 2001-2015, validación 2016-2018, prueba 2019-2024.
+Prueba: 4104 filas distrito x mes de 57 distritos. Semilla 42.
+Tareas: casos (regresión, mes siguiente) y alerta (clasificación de brote).
+
+1. TABLA COMPARATIVA (prueba)
+------------------------------------------------------------------------------
+Modelo / entradas                         RMSE     MAE   PR-AUC    Alertas
+Lineal / Solo casos                      0.940   0.583    0.107     47/120
+Lineal / Casos + clima                   0.940   0.584    0.112     74/120
+Árbol / Solo casos                       0.941   0.611    0.093     43/120
+Árbol / Casos + clima                    0.944   0.613    0.135     41/120
+Random Forest / Solo casos               0.926   0.598    0.120     66/120
+Random Forest / Casos + clima            0.923   0.596    0.154     71/120
+MLP / Solo casos                         0.922   0.575    0.121     65/120
+MLP / Casos + clima                      0.919   0.573    0.132     59/120
+CNN / Solo casos                         0.938   0.621    0.112     50/120
+CNN / Casos + clima                      0.941   0.632    0.104     23/120
+Regla: último mes                        1.187   0.561        -          -
+Regla: mismo mes año anterior            1.252   0.617        -          -
+Regla: siempre cero                      1.100   0.432        -          -
+Regla: clasificador al azar                  -       -    0.029          -
+
+Tabla completa: results/metrics.csv. Gráficos: results/plots/fig1..fig5.
+
+2. MEJOR MODELO
+------------------------------------------------------------------------------
+Elegido por validación: Random Forest con solo casos (RMSE de validación 1.1270).
+- Casos: RMSE 0.926, 16 % menor que 'siempre cero' y 22 % menor que 'último mes'.
+- Alertas: PR-AUC 0.120, 4.1 veces la del azar (0.029); detecta 66/120 meses de brote con 759 falsas alarmas.
+- La MLP obtiene el menor RMSE en prueba (0.919); la diferencia entre los cinco modelos con solo casos es de 0.019 casos. Random Forest y MLP se consideran empatados.
+
+3. POR QUÉ
+------------------------------------------------------------------------------
+- El historial reciente de casos domina: las variables de casos suman el 86 % de la
+  importancia del Random Forest; la media de los últimos 3 meses es la principal.
+- Los conteos son pequeños y ruidosos: el 75 % de las filas de prueba tiene 0 casos.
+  Random Forest (promedio de 100 árboles) y MLP (función continua) suavizan ese ruido;
+  un árbol solo salta entre pocos grupos y queda último.
+- La CNN solo ve 3 meses y hay pocos datos por distrito: no aprovecha la convolución.
+- El modelo lineal queda cerca porque la señal principal es la persistencia.
+
+4. APORTE DEL CLIMA
+------------------------------------------------------------------------------
+- En casos, el clima cambia el RMSE como máximo 0.0034. En alertas ayuda a
+  Random Forest y al árbol, pero empeora a la CNN y dispara falsas alarmas del lineal.
+- El clima suma el 14 % de la importancia (sobre todo lluvia de 2-3 meses antes).
+- Los datos SENAMHI disponibles terminan en octubre de 2015; en 2019-2024 el clima
+  es imputado y solo el 18 % de las predicciones de prueba tuvo clima completo.
+  Con estos datos no se puede afirmar ni descartar que el clima mejore la predicción.
+
+5. INSIGHTS
+------------------------------------------------------------------------------
+- En MAE ganan las reglas simples ('siempre cero' 0.432); los modelos ganan en RMSE porque
+  fallan menos en los meses con varios casos, los relevantes para vigilancia.
+- Todos sobreestiman el total: 1774 casos observados frente a 2134-2407 predichos.
+  La incidencia anual cayó de 618 (ajuste) a 447 (validación) y 296 (prueba).
+- Se anticipa el pico de enero de cada año, pero no su tamaño.
+- Los distritos con más casos se subestiman y los pequeños se sobreestiman.
+- Para detectar el 55 % de los brotes, el modelo emite ~11.5 alertas falsas por cada verdadera.
+
+6. LIMITACIONES
+------------------------------------------------------------------------------
+- Clima sin observaciones después de 2015; la imputación no recupera mediciones reales.
+- Una semilla, un periodo de prueba y 2 configuraciones por modelo; sin intervalos de confianza.
+- El periodo de prueba ya se revisó en versiones anteriores: no es validación externa nueva.
+- Se excluyen distritos con menos de 50 casos hasta 2015.
+- La alerta (media + 2 DE) es una convención; el puntaje no está calibrado.
+- Predicción a un mes con los casos reales del mes anterior; no se evalúa a varios meses.
+
+Análisis extendido: docs/ANALISIS_RESULTADOS.md. Paper: report.pdf.

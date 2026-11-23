@@ -1,0 +1,612 @@
+[
+  {
+    "path": "data/processed/clima_diario.csv",
+    "bytes": 42168409,
+    "sha256": "de900fb8187536a586de6c809dacdfd56bdf704f14243f2e259efa31607fa1dc"
+  },
+  {
+    "path": "data/processed/clima_mensual_cajamarca.csv",
+    "bytes": 1198495,
+    "sha256": "59b71f77d5f680e23be527215416b14dd3019265bdec94aa8f92608853286dec"
+  },
+  {
+    "path": "data/processed/dataset_cajamarca.csv",
+    "bytes": 4480172,
+    "sha256": "e918dffea7005994a628dabd6a6627c47bcb53cbeef8a0452d40bfc3eb19b069"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/asignacion_estaciones.csv",
+    "bytes": 3369,
+    "sha256": "20ffbe29695936c6a11f55ca14a18b25ae07652c69f1c390710aa20fa14e6d76"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/estacional_52.csv",
+    "bytes": 2414133,
+    "sha256": "4c1616174206c70046b0a6003a140c47f682454ae7638f613c40482eefb26d7d"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/estacional_52_auditoria.csv",
+    "bytes": 46650,
+    "sha256": "d635749f0afb49dbbe67014a7009c88f39e7167f0da0a39465b70d81444b70e6"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/huecos_cortos.csv",
+    "bytes": 2412518,
+    "sha256": "2a31c8e33f3bd4163ad6ae28228c5b4be64c5097584090be5af9ce53431d6fe7"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/huecos_cortos_auditoria.csv",
+    "bytes": 35056,
+    "sha256": "b2417e82850742f9e156e0c161d35dfb67fee9024af1e520d251351137bc60a5"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/sin_imputar.csv",
+    "bytes": 2375044,
+    "sha256": "345b8f3ecb6d5058c4a672f372c7868e3d3e0bc9e8d55fd18d2990b1da5412c3"
+  },
+  {
+    "path": "data/processed/experimento_clima/historico/sin_imputar_auditoria.csv",
+    "bytes": 2,
+    "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/asignacion_estaciones.csv",
+    "bytes": 4142,
+    "sha256": "5976ccb784c2a0b46d580adb79d548bfc8e70ea48953aa5059b2afe6896dae57"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/estacional_52.csv",
+    "bytes": 4899776,
+    "sha256": "a4720b5253a7052d438e823368a4d24046d4d114d4b5cd73019f3532adb36b17"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/estacional_52_auditoria.csv",
+    "bytes": 635794,
+    "sha256": "a7968f21a2291d0980c70f33b8efcc72ea82a1a900acbe74e3de2c623c28548e"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/huecos_cortos.csv",
+    "bytes": 4437337,
+    "sha256": "086f65075970ff9929e5f679527102f21205a5cfee1c6e5350aa6861b9d4db2a"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/huecos_cortos_auditoria.csv",
+    "bytes": 45229,
+    "sha256": "40552b4fdda3bffebf68563e53d5d1c929c99e2db479ebb02f7ac6e06db800c0"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/sin_imputar.csv",
+    "bytes": 4389017,
+    "sha256": "de02213480cc631ee22d6fe83d39639c7bb3a6d7124dde0142aca389f6b3d4c8"
+  },
+  {
+    "path": "data/processed/experimento_clima/oficial/sin_imputar_auditoria.csv",
+    "bytes": 2,
+    "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+    "path": "data/processed/experimento_clima/resumen_imputacion.csv",
+    "bytes": 545,
+    "sha256": "ae43dad5a670b469769324a7e3c57a82646377bba749dd7647daad8e549b3413"
+  },
+  {
+    "path": "data/processed/match_localidades_cajamarca.csv",
+    "bytes": 450375,
+    "sha256": "cdd67387ae64fe2e249bd3e7d93417152c0131991650c5313c887c4ca60f8e74"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000240 - tabaconas.txt",
+    "bytes": 410733,
+    "sha256": "5c0a5a9c2415647afc930ec01b38d9508fba73c1dacafb1ccf34010f1c0da4a6"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000241 - el limon.txt",
+    "bytes": 402836,
+    "sha256": "3b4575e3d603159fbf65290c375be46dfcb021aad02b681b8d7fe512c731d6bc"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000250 - chontali.txt",
+    "bytes": 442609,
+    "sha256": "94f3c2b936032ca5a9c712c951fd09684e38b7ca9eb6fbb12e711f085a6dd112"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000260 - chirinos.txt",
+    "bytes": 225844,
+    "sha256": "b5e56733263d61034a37f6e97f62033a03744dc070b2a071d5dcb6261210a925"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000304 - augusto weberbauer.txt",
+    "bytes": 679035,
+    "sha256": "2c27569442bc57197d7a85f059a39881510acbe6540c5622dac3740f94bc80ef"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000341 - llama.txt",
+    "bytes": 401681,
+    "sha256": "c0dd4c8d6ad0c80df5307c26f45608703e73de2000d684669798132e2a246b38"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000349 - la cascarilla.txt",
+    "bytes": 236238,
+    "sha256": "322041eea06f61e2b6ea95bc9a57f4c78886c936816c1a4fc06f57f0c18a038e"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000352 - cutervo.txt",
+    "bytes": 424941,
+    "sha256": "7fa9ceaa9a514444f64c0313963551a85abb68f3a711d65100beb6fa3d7ae49e"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000353 - cochabamba.txt",
+    "bytes": 427464,
+    "sha256": "903fd76bccc273a01af855ca0f45313e57fcc1f566e7494d215d58089485c105"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000369 - san juan.txt",
+    "bytes": 432412,
+    "sha256": "da44342bbe0606c62e551ddf704c398db1023458174e846707d9ac01ce6deeee"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000370 - san marcos.txt",
+    "bytes": 427103,
+    "sha256": "232c3204a585aa2eb9315ca725b63f891ccecf7dcb4829bc5e9caecd3d0558f0"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000373 - cajabamba.txt",
+    "bytes": 423631,
+    "sha256": "33b1c4485778a88574fb6c7ee7ff182bf8605b173fcf2bc9652e9dd4d50c52e6"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000393 - asuncion.txt",
+    "bytes": 454963,
+    "sha256": "1a4246a73dee721bf478d265c9e3378717de1b9780008331f490fd1fa8e7fcb8"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00000395 - chancay banos.txt",
+    "bytes": 226754,
+    "sha256": "db70964b7769796f559b9707de2d5056c6630dbb06b798951178f476ba5c44b8"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00152129 - sallique.txt",
+    "bytes": 462665,
+    "sha256": "fad6faaaaed5e7067abd49d9fa21e98aa4a2050d6ed4dbdbe7fdc46244039c80"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153103 - tocmoche.txt",
+    "bytes": 458868,
+    "sha256": "eb7b9141f41438dcd1c6688601397b5058db655f95a5ea9983c385c86a5c86ce"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153107 - hacienda pucara.txt",
+    "bytes": 477395,
+    "sha256": "0706c92fc2a73c0c6c8f882951ce0223411545130774a07520efe9a2f1891355"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153108 - quebrada shugar.txt",
+    "bytes": 502636,
+    "sha256": "fce7389fba2e50102b0e24466f45295df73c4c873bb2f645f5cfe5cc692505a4"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153109 - querocotillo.txt",
+    "bytes": 474465,
+    "sha256": "88313027c88d4e1d299b9fca59b6998620a71240f39af4adf7f41854677c21b9"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153110 - UDIMA.txt",
+    "bytes": 461082,
+    "sha256": "8f64a15df9b00b93e37fa1819732665eb721f53e12793151e5f0a76c25454e27"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153111 - LIVES.txt",
+    "bytes": 470256,
+    "sha256": "f6174ca188546a55f2cd89a12f8e0d8881e9d96d025bfe8a2b952ed4a6601ca1"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153201 - san benito.txt",
+    "bytes": 459913,
+    "sha256": "505aafa2dce0f27d734bae5e6d645f4ae6026b2d014cf6e1fc1fb668d86a42f5"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153203 - cilete.txt",
+    "bytes": 467454,
+    "sha256": "50bf79f5eea7e3390c2f38585dfc127bb21aa057958e7b2508baf1c95152a746"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153208 - chugur.txt",
+    "bytes": 477429,
+    "sha256": "004e088f43589f92ce64fc653f567d097f9d22c7bead8003a52295ebe7d34ae4"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153223 - cachachi.txt",
+    "bytes": 481109,
+    "sha256": "4fcf70c75460bbf28bb0187a27d2d042f414cb30092329f2a995fe331f7dae90"
+  },
+  {
+    "path": "data/raw/clima/cajamarca/qc00153235 - chotano lajas.txt",
+    "bytes": 273260,
+    "sha256": "a87cff38c300aef5f46bd867519b027fd1f8de75606ebecd59f50b6a04fd5828"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000607 - granja kcayra.txt",
+    "bytes": 420975,
+    "sha256": "91e9478123a98571e0c631335346d81dbcf7d6c32670a27c6640cc72e7b504db"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000686 - paruro.txt",
+    "bytes": 431218,
+    "sha256": "54204f0f90e9f0eb6b61f31884d9ad52fbd89678d85457739af9f02e119b7486"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000687 - ACOMAYO.txt",
+    "bytes": 420907,
+    "sha256": "33b02d7fd48060bc2407cfb1bd835f5fa1edf255774f438f3d81724d7599d790"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000690 - ccatcca.txt",
+    "bytes": 391359,
+    "sha256": "14ac9e29e10e084e2682dda481693ef4402409dd7ba9bcacf4eb8978a6076ae6"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000809 - caycay.txt",
+    "bytes": 442979,
+    "sha256": "0ea3c893e66b96b78d1c43caae033b889495e76712d8afd06080becc8673e4b4"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000812 - pomacanchi.txt",
+    "bytes": 252703,
+    "sha256": "077c4b4dce1e0e906a00787415e3e0baf8692427ebe2cd7c1d3b617309a659e9"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00000844 - pisac.txt",
+    "bytes": 453046,
+    "sha256": "2a0182d45054ef90e0b2c7cda6ddb396b96faec5a77eeb114c2f5e31bfd28418"
+  },
+  {
+    "path": "data/raw/clima/cusco/qc00156306 - colquepata.txt",
+    "bytes": 450842,
+    "sha256": "2d0a77667d6435e415532946f522b1b4b9c5d95b0800176e60f3885421a3ddda"
+  },
+  {
+    "path": "data/raw/datos_abiertos_vigilancia_leishmaniosis_2000_2024.csv",
+    "bytes": 19207862,
+    "sha256": "948f82a31ee2181bbf9ad7fbd45e2a1ce8d0e802edd7470b0955acb56a6526e7"
+  },
+  {
+    "path": "data/raw/descripcion_dataset_leishmaniosis.md",
+    "bytes": 4080,
+    "sha256": "929609d60def4c7ffd0295a4e3be9cbc73de5d3bd332cced07744eb617089a6f"
+  },
+  {
+    "path": "data/raw/external/FUENTES.md",
+    "bytes": 1247,
+    "sha256": "b0ed0f287c700b0b8626584caf52b3c7924c29b94012791acfc3e3ce34eb4301"
+  },
+  {
+    "path": "data/raw/external/centros_poblados_cajamarca.csv",
+    "bytes": 676065,
+    "sha256": "0015a6edebc88945098568af75009ebb0c4484756e8209aad6ef0c38d742ddd1"
+  },
+  {
+    "path": "data/raw/external/distritos_cajamarca.csv",
+    "bytes": 11995,
+    "sha256": "7b8d053983e4f22fc6b94fb2e3b87b9c330acc24bf4cd65c2284e42de5aec200"
+  },
+  {
+    "path": "data/raw/external/estaciones_senamhi.csv",
+    "bytes": 2804,
+    "sha256": "0dc202ef3ca38635e90c1b23eaea6dd28a698b72a719a2d5ef145f174a6a5b54"
+  },
+  {
+    "path": "docs/ANALISIS_RESULTADOS.md",
+    "bytes": 10565,
+    "sha256": "6a03298ee4dfa7fba03dc61088d34dd06cacfe1eb37d1a9a6c3013797380a8ed"
+  },
+  {
+    "path": "docs/DECISIONES_Y_FUENTES.md",
+    "bytes": 22765,
+    "sha256": "426ffeaa94d48229083ba7555da7bda7a0e93fa668161a3f68ebb73755af1260"
+  },
+  {
+    "path": "docs/DECISION_EQUIPO.md",
+    "bytes": 3019,
+    "sha256": "bfb8e3f901b39c2c325228c61083babb4e3b2aa0ebb3bc3d2d3cb3dedbb092f9"
+  },
+  {
+    "path": "docs/GUIA_DEL_PIPELINE.md",
+    "bytes": 10832,
+    "sha256": "d8fd9dbdb492b7042937a85081e14d59f2bdd0bd02d84218475220020fe5fdc8"
+  },
+  {
+    "path": "papers/paper_integrante1.pdf",
+    "bytes": 1429494,
+    "sha256": "d62f537d99895b1bb6f98758d47ee50d60a63b816d1071b0a62b1346916a3231"
+  },
+  {
+    "path": "papers/paper_integrante1_resumen.pdf",
+    "bytes": 71963,
+    "sha256": "5fbbb23eec5ab38b8b8e6dbb25f5b313c129ddf19cb0ce0c5f7b3440f6399e97"
+  },
+  {
+    "path": "papers/paper_integrante2.pdf",
+    "bytes": 3923091,
+    "sha256": "8b846bacd7fa80859c07cd21912032afcbdd5c40f306973a065f0e30740b20c3"
+  },
+  {
+    "path": "papers/paper_integrante2_resumen.pdf",
+    "bytes": 512492,
+    "sha256": "120343c09072bfb3f7d626d7329efe584b5167292918b9983c732465b7303647"
+  },
+  {
+    "path": "papers/paper_integrante3.pdf",
+    "bytes": 2221947,
+    "sha256": "4f8b2d4b5d11a466f1dd3c974406e861dd4ede39ec4197a370995cb5998d7049"
+  },
+  {
+    "path": "papers/paper_integrante3_resumen.pdf",
+    "bytes": 130352,
+    "sha256": "cfda9ea1902efa2398e23116bca6d717eba6e78593d83d742eee7f35fa69165a"
+  },
+  {
+    "path": "papers/paper_integrante4.pdf",
+    "bytes": 10436130,
+    "sha256": "559984d1172b937e662ee2ebac1a9362220e20545c5aae5105948fdb0e005066"
+  },
+  {
+    "path": "papers/paper_integrante4_resumen.pdf",
+    "bytes": 83156,
+    "sha256": "fe04c9bf551995da14b6a4bfd52713f54ea0d2a606460400c23915964946c03b"
+  },
+  {
+    "path": "requirements-lock.txt",
+    "bytes": 441,
+    "sha256": "521f44266bdede399a5750e02cc8aa1b2e9d382c4d80eca9a62e7b121008b689"
+  },
+  {
+    "path": "requirements.txt",
+    "bytes": 412,
+    "sha256": "e3f86fbe960c4ddbc7668aff67389de7170669c3bdd30e3fa6b9c180954e020a"
+  },
+  {
+    "path": "results/arbol_metricas.csv",
+    "bytes": 2216,
+    "sha256": "72a271bde0d7dad0aae5b602ee8ee70570d0d75418c2dc5cac6574bfd6d769e3"
+  },
+  {
+    "path": "results/arbol_reglas.txt",
+    "bytes": 604,
+    "sha256": "da904e9a10a684944bff5550ae845407372e5c0d9b74cb1fa9aab6da73674a56"
+  },
+  {
+    "path": "results/baseline_metricas.csv",
+    "bytes": 1464,
+    "sha256": "088afb0e2a179fa412e16c407e4654feea55d0aca502c28f174a14e1dd53ac45"
+  },
+  {
+    "path": "results/casos_por_distrito.csv",
+    "bytes": 2749,
+    "sha256": "488d237cae838ce7fbf953891f6a5c74b12d46f57e8fd30c9bca72df58035f42"
+  },
+  {
+    "path": "results/comparacion_70_distritos/auditoria_imputacion.csv",
+    "bytes": 783520,
+    "sha256": "e78adcea485516de003fb23b359a4cc1654ce69aa6915501e31962ca3d03a2c2"
+  },
+  {
+    "path": "results/comparacion_70_distritos/ejecucion.json",
+    "bytes": 471,
+    "sha256": "a1ada8656609ee905321cf4118ad1d1666d912221dcc80909db40e6ae204d1bc"
+  },
+  {
+    "path": "results/comparacion_70_distritos/metricas.csv",
+    "bytes": 366,
+    "sha256": "294364c65fe798df906641362b840a81f8b9520cea632b3803712cc92f15f5e6"
+  },
+  {
+    "path": "results/comparacion_70_distritos/predicciones.csv",
+    "bytes": 399607,
+    "sha256": "fc2f260624d9c7ff88741aacb5de825185f2802bece8163eceee60b1e8172522"
+  },
+  {
+    "path": "results/experimento_clima/RESULTADOS.md",
+    "bytes": 8319,
+    "sha256": "c41d179059b23f0ddf4cfdcfb5d1d75f4fd5634a209c84069cf2c72535f6745d"
+  },
+  {
+    "path": "results/experimento_clima/diagnostico_ajuste.csv",
+    "bytes": 1307,
+    "sha256": "f11ba3b1086c39dda694c16f0c6f7b9e8fb134f3ec0af323a032f2e01c382071"
+  },
+  {
+    "path": "results/experimento_clima/ejecucion.json",
+    "bytes": 488,
+    "sha256": "04a6699af5df629d04cc2df1d235f5dac8069b1ec1979a5d85bd43bf79e48fcd"
+  },
+  {
+    "path": "results/experimento_clima/integridad_datasets.csv",
+    "bytes": 282,
+    "sha256": "822244c4b8e6980dff9f459a6e833b6aec735e5fcd2ce59a6609451eb3ec7b0d"
+  },
+  {
+    "path": "results/experimento_clima/metricas.csv",
+    "bytes": 15733,
+    "sha256": "e889d1320a1baa2b67cfef127fdfab68ac84747bc3c22262bd9f9bf6da571934"
+  },
+  {
+    "path": "results/experimento_clima/predicciones.csv",
+    "bytes": 18385821,
+    "sha256": "548d69424a314b8741387aad2945b04122f73c6e80d46c1b7ddd693a3a0572bc"
+  },
+  {
+    "path": "results/experimento_clima/seleccion_por_validacion.csv",
+    "bytes": 862,
+    "sha256": "d35c76518322d371db1f7d98b2346818cb4b2c5dc31f0ccd45518e6a3b42cf94"
+  },
+  {
+    "path": "results/experimento_clima/validacion.csv",
+    "bytes": 10715,
+    "sha256": "167096f2bec7b9c0fd9341704f8fd4425594edf849b2fe7779f1605e4e4cef25"
+  },
+  {
+    "path": "results/experimento_clima/verificacion.json",
+    "bytes": 273,
+    "sha256": "edc27a37df7646287fc845824fbcfc57222db5b5c4055e15828be64c640bd4f5"
+  },
+  {
+    "path": "results/importancia_variables_rf.csv",
+    "bytes": 531,
+    "sha256": "c4866d1b79c21d1c1e175dc3dc4eac2ce3e35249f1112359e1073916395d3a39"
+  },
+  {
+    "path": "results/metrics.csv",
+    "bytes": 2541,
+    "sha256": "2e59fe542fffa5ebf42e41467a7e1198a8837352e884c1179ab50c12445efe2b"
+  },
+  {
+    "path": "results/model_comparison.txt",
+    "bytes": 4821,
+    "sha256": "656582ac9d19bc83d826ea5f36d5a055db2ff0998edd095fd9755a98313e1890"
+  },
+  {
+    "path": "results/plots/arbol_alertas.png",
+    "bytes": 74258,
+    "sha256": "9a13fc939d1fbef2ed4bf3397fd2fc94f3b72ab7a4b9b7533600d3308e9cce09"
+  },
+  {
+    "path": "results/plots/arbol_cv_regresion.png",
+    "bytes": 40800,
+    "sha256": "e638b281a7aa46c4d9f8cec578f061ea96887dcff86555e12d7997fb45f87b6b"
+  },
+  {
+    "path": "results/plots/arbol_importancia.png",
+    "bytes": 51430,
+    "sha256": "7c6bdb338b8367f45ab429e0982197c94ed65195881a635c887e675e280d0da3"
+  },
+  {
+    "path": "results/plots/arbol_reglas.png",
+    "bytes": 125860,
+    "sha256": "73904eeba0678555eca2e276f988e2f01d6bd91011f28b93d3439f1ae4fcd884"
+  },
+  {
+    "path": "results/plots/arbol_total_observado_vs_predicho.png",
+    "bytes": 189594,
+    "sha256": "095cd5644c9682b4876d641d878b1418ea894a4e43db33a4813a12261789600f"
+  },
+  {
+    "path": "results/plots/eda_autocorrelacion.png",
+    "bytes": 23380,
+    "sha256": "eb64ca08d33cf8e18e3e9ec030123112c45f28b2675ded6da09446184c0e6650"
+  },
+  {
+    "path": "results/plots/eda_casos_por_anio.png",
+    "bytes": 19125,
+    "sha256": "42009575cc428a48836cd448bea2ff1c2ad6e70de58a9ffd8374696a09efae89"
+  },
+  {
+    "path": "results/plots/eda_casos_por_semana.png",
+    "bytes": 22408,
+    "sha256": "bbe56ef1d56b8253f5aef360c6b87a1af134f0cd7fc75ea18107fb6d81877493"
+  },
+  {
+    "path": "results/plots/eda_distribucion_casos.png",
+    "bytes": 74338,
+    "sha256": "3b2aabc50a437be851d4dbc4cf378fbeb711cfbdb735911d647257655f404255"
+  },
+  {
+    "path": "results/plots/eda_distribucion_modelado.png",
+    "bytes": 76038,
+    "sha256": "a203f7a49424fd5fd5e8bac822cfc71629bc0e608ff34b5f2f30974cb21ba167"
+  },
+  {
+    "path": "results/plots/eda_estacionalidad.png",
+    "bytes": 41993,
+    "sha256": "9b669d9c656961ae8a11939cbab19edefb7c21c70f77767dbbf47d7542bd5318"
+  },
+  {
+    "path": "results/plots/eda_geografia.png",
+    "bytes": 62311,
+    "sha256": "96764c7f89ff96fe5dcb9ab86e4adc5c3e2b665d16b82bac25612594d976e505"
+  },
+  {
+    "path": "results/plots/fig1_error_por_modelo.png",
+    "bytes": 156915,
+    "sha256": "81413a50796a5d834db14bf233b432d6e388b0bcb9a5270dcc721eedc713bbb1"
+  },
+  {
+    "path": "results/plots/fig2_observado_vs_predicho.png",
+    "bytes": 221506,
+    "sha256": "2580508e71ec7fc2bfe44673c7e467ab0d2e1ae9d1af0f897518f946e3ec23da"
+  },
+  {
+    "path": "results/plots/fig3_curvas_precision_recall.png",
+    "bytes": 121482,
+    "sha256": "abc2437f6a44a391e9f2c133412dffe310f53907989a730828f3596229a4842a"
+  },
+  {
+    "path": "results/plots/fig4_importancia_variables_rf.png",
+    "bytes": 165610,
+    "sha256": "6a59acf9df7f70a0ed595f57f6a8bfefa0686638c0d0140dc2ab58405cf075f3"
+  },
+  {
+    "path": "results/plots/fig5_casos_por_distrito.png",
+    "bytes": 110233,
+    "sha256": "0dc86d7a5e0dda4c2f31121f6d27b16bcf2745d82134de75484a5521c235e861"
+  },
+  {
+    "path": "results/tabla_comparativa.md",
+    "bytes": 3038,
+    "sha256": "2dab65b12717e1c9bc074521836ab8c3f874248e91f65cd8c3bf17052da253f3"
+  },
+  {
+    "path": "src/comparacion_70_distritos.py",
+    "bytes": 3767,
+    "sha256": "b5321866dd245c5797932bfa071869bac3e7e00e4686bb7b4d9a10f388ae2fbf"
+  },
+  {
+    "path": "src/ejecutar.py",
+    "bytes": 2618,
+    "sha256": "7bebf79c1a8c0db5ac2cb4b247d975484c58479a5c0f402f90a8b5b614c12fc8"
+  },
+  {
+    "path": "src/evaluation.py",
+    "bytes": 2759,
+    "sha256": "a02e95ec6703c54d27f64a225a071fe88c814cdd766079e0dca7918c38374866"
+  },
+  {
+    "path": "src/experimento_clima.py",
+    "bytes": 16597,
+    "sha256": "8192966c8263d260a777ae80b8b96e1c3f0b3d37605215f4db8be03939ca0169"
+  },
+  {
+    "path": "src/integracion_clima.py",
+    "bytes": 15792,
+    "sha256": "901487b0cb3e2ba03a84b133360a8f88fcbd2e71f3f8f833940018b1ef038d24"
+  },
+  {
+    "path": "src/models.py",
+    "bytes": 7058,
+    "sha256": "0c25ac649b05a8030e1347664ca32fe0c445337f7cbec47b9d203eb5154af330"
+  },
+  {
+    "path": "src/preprocessing.py",
+    "bytes": 11601,
+    "sha256": "3c8d1604ac8b5d4c1932cfdaeb486d1ee9ffceb10270d9c531eb501f1bb69926"
+  },
+  {
+    "path": "src/reporte_experimento_clima.py",
+    "bytes": 8532,
+    "sha256": "c2b2e2869e8ff22680131a900d83ef97a37371b2bed65dd36509036c865a4cb2"
+  },
+  {
+    "path": "src/resultados_finales.py",
+    "bytes": 22640,
+    "sha256": "8e4d271ec1c796220f06ea9f95a772ef24ddf63bd471226ca2d8e3aa39cd46e5"
+  },
+  {
+    "path": "src/tests/test_experimento_clima.py",
+    "bytes": 3599,
+    "sha256": "88b50a6c6faf9cec108553b69adce7f89c074f5015d5d71d3aeb39c0365a6069"
+  },
+  {
+    "path": "src/verificar_experimento_clima.py",
+    "bytes": 4013,
+    "sha256": "83d3f34bfb49f946b8e5f2b5dd702a1be73db6a304a009901b6ba980aca5e0c2"
+  }
+]

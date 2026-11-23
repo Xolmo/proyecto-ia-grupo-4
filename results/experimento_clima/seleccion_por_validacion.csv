@@ -1,0 +1,5 @@
+protocol,variant,family,task,candidate,validation_score,threshold,n_train,n_test,districts,climate_fraction,RMSE,MAE,MASE,PR_AUC,F1,recall,precision,ROC_AUC,true_alerts,predicted_alerts,false_alerts
+historico,solo_casos,random_forest,alerta,0.0,0.1594790700236379,0.6715917486121684,6072,1656,46.0,0.0,,,,0.0200507792784059,0.0,0.0,0.0,0.5964482547458665,23.0,40.0,40.0
+historico,solo_casos,random_forest,casos,1.0,1.3293747099042024,,6072,1656,46.0,0.0,1.015905213971922,0.7184536747483824,0.5467415356651432,,,,,,,,
+oficial,huecos_cortos,random_forest,alerta,0.0,0.1017932840452301,0.4909752595760729,12312,4104,57.0,0.0,,,,0.1203000325572871,0.1396825396825396,0.55,0.08,0.7467024347389558,120.0,825.0,759.0
+oficial,huecos_cortos,random_forest,casos,1.0,1.1270490563526838,,12312,4104,57.0,0.0,0.9259406382088704,0.5976812674286713,0.5811144092696677,,,,,,,,

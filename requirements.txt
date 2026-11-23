@@ -1,0 +1,22 @@
+# Dependencias del proyecto (Python 3.12 o superior).
+# Instalar con: pip install -r requirements.txt
+# Versiones exactas probadas: requirements-lock.txt
+
+# Datos y cálculo
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+
+# Modelos y métricas
+scikit-learn>=1.7
+torch>=2.2
+threadpoolctl>=3.1
+
+# Gráficos
+matplotlib>=3.7
+seaborn>=0.12
+
+# Notebooks de EDA y línea base
+statsmodels>=0.14
+imbalanced-learn>=0.11
+jupyter>=1.0

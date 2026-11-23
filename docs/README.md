@@ -1,8 +1,10 @@
-# Documentos del entregable final
+# Documentación
 
 | Archivo | Contenido |
 |---|---|
-| `paper_grupo4.pdf` | Paper académico (3–5 páginas) — pendiente |
-| `presentacion_grupo4.pdf` | Presentación final (máximo 15 minutos) — pendiente |
+| [GUIA_DEL_PIPELINE.md](GUIA_DEL_PIPELINE.md) | Paso a paso del pipeline y cómo ejecutarlo |
+| [ANALISIS_RESULTADOS.md](ANALISIS_RESULTADOS.md) | Mejor modelo, por qué, aporte del clima, limitaciones e insights |
+| [DECISIONES_Y_FUENTES.md](DECISIONES_Y_FUENTES.md) | Justificación y citas de cada decisión de método |
+| [DECISION_EQUIPO.md](DECISION_EQUIPO.md) | Decisiones del equipo registradas |
 
-Las tablas y figuras del paper se generan con `pipeline/codigo/resultados_finales.py` y están en [`pipeline/results/finales/`](../pipeline/results/finales/).
+El paper está en [`../report.pdf`](../report.pdf) y la presentación en [`../presentation.pdf`](../presentation.pdf).
