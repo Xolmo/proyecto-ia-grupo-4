@@ -1,14 +1,15 @@
-"""Comparación final: modelos del equipo (V1) y redes del paper 2.
+"""Comparación final: modelos del equipo (V1), redes del paper 2 y SARIMA del paper 4.
 
 Une, para cada protocolo (``oficial`` 2019-2024 e ``historico`` 2012-2014):
 
 - los cinco modelos del equipo (``results/experimento_clima/``), y
-- las redes SFNN1, SFNN2 y DFNN del paper 2 (``results/paper2*/``, ver ``modelo_paper2.py``).
+- las redes SFNN1, SFNN2 y DFNN del paper 2 (``results/paper2*/``, ver ``modelo_paper2.py``), y
+- el SARIMA del paper 4 (``results/paper4*/``, ver ``modelo_paper4.py``).
 
 Regresión: RMSE, MAE y MASE de prueba; RMSE de validación (criterio de elección).
 Alerta: PR-AUC, ROC-AUC, EER, accuracy, recall, precisión, FPR y F1, más la matriz
 de confusión con el umbral elegido en validación. La alerta de las redes del paper
-usa los casos predichos como puntaje.
+y del SARIMA usa los casos predichos como puntaje.
 
 EER (equal error rate): tasa de error donde la de falsas alarmas (FPR) iguala a la
 de brotes no detectados (FNR); menor es mejor. Accuracy se informa, pero con ~3 %
@@ -33,6 +34,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "results/comparacion_final"
 TEAM = ROOT / "results/experimento_clima"
 PAPER2 = {"oficial": ROOT / "results/paper2", "historico": ROOT / "results/paper2_historico"}
+PAPER4 = {"oficial": ROOT / "results/paper4", "historico": ROOT / "results/paper4_historico"}
+P4_NAMES = {"SARIMA_paper": "SARIMA (0,1,0)(1,1,0)12 del paper", "SARIMA_AIC": "SARIMA, orden por AIC por distrito"}
 
 FAMILIES = {"lineal": "Ridge / logística", "arbol": "Árbol de decisión", "random_forest": "Random Forest",
             "mlp": "MLP", "cnn": "CNN temporal"}
@@ -93,6 +96,23 @@ def paper2_rows(protocol):
     return rows
 
 
+def paper4_rows(protocol):
+    folder = PAPER4[protocol]
+    if not (folder / "predicciones.csv").exists():
+        print(f"Falta {folder}; se omite el SARIMA del paper 4 en {protocol}")
+        return []
+    metr = pd.read_csv(folder / "metricas.csv")
+    pred = pd.read_csv(folder / "predicciones.csv", dtype={"ubigeo": str})
+    rows = []
+    for _, r in metr.iterrows():
+        p = pred[pred.modelo == r.modelo]
+        rows.append(dict(origen="Paper 4", modelo=P4_NAMES[r.modelo], entradas="Solo casos (serie)",
+                         RMSE_validacion=r.RMSE_validacion, RMSE=r.RMSE, MAE=r.MAE, MASE=r.MASE,
+                         RMSE_media_semillas=np.nan, RMSE_sd_semillas=np.nan, uso_clima_prueba=0.0,
+                         **alert_metrics(p.alerta_observada, p.casos_predichos, p.umbral_alerta.iloc[0])))
+    return rows
+
+
 def references(protocol):
     metr = pd.read_csv(TEAM / "metricas.csv")
     ref = metr[(metr.protocol == protocol) & (metr.variant == "referencia")]
@@ -113,7 +133,7 @@ def plot(table, refs, protocol):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    colors = {"Equipo": "#4c78a8", "Paper 2": "#e8833a"}
+    colors = {"Equipo": "#4c78a8", "Paper 2": "#e8833a", "Paper 4": "#54a24b"}
     t = table.sort_values("RMSE", ascending=False).reset_index(drop=True)
     labels_ = [f"{r.modelo} · {r.entradas}" for r in t.itertuples()]
     fig, axes = plt.subplots(1, 2, figsize=(14, 0.32 * len(t) + 2.2), sharey=True)
@@ -125,14 +145,15 @@ def plot(table, refs, protocol):
             ax.axvline(r.RMSE, ls="--", lw=1, color="gray")
             ax.text(r.RMSE, len(t) - 0.4, r.modelo.replace("Regla: ", ""), rotation=90, va="top", ha="right",
                     fontsize=8, color="gray")
-    ax.set_xlim(t.RMSE.min() * 0.9, refs.RMSE.max() * 1.02)
+    ax.set_xlim(t.RMSE.min() * 0.9, max(refs.RMSE.max(), t.RMSE.max()) * 1.02)
     ax.set_yticks(range(len(t)), labels_, fontsize=8)
     ax.set_xlabel("RMSE de prueba (menor es mejor)")
     ax = axes[1]
     ax.barh(range(len(t)), t.PR_AUC, color=[colors[o] for o in t.origen])
     ax.set_xlabel("PR-AUC de la alerta (mayor es mejor)")
-    handles = [plt.Rectangle((0, 0), 1, 1, color=c) for c in colors.values()]
-    fig.legend(handles, colors.keys(), loc="upper right")
+    present = [o for o in colors if o in set(t.origen)]
+    handles = [plt.Rectangle((0, 0), 1, 1, color=colors[o]) for o in present]
+    fig.legend(handles, present, loc="upper right")
     fig.suptitle(f"Comparación de modelos, protocolo {protocol}")
     fig.tight_layout()
     fig.savefig(OUT / f"comparacion_{protocol}.png", dpi=130)
@@ -151,14 +172,14 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     fmt = {c: "{:.3f}" for c in ["RMSE_validacion", "RMSE", "MAE", "MASE", "PR_AUC", "ROC_AUC", "EER",
                                   "accuracy", "recall", "precision", "FPR", "F1", "RMSE_media_semillas", "RMSE_sd_semillas"]}
-    md = ["# Comparación final de modelos (equipo + paper 2)", "",
+    md = ["# Comparación final de modelos (equipo + paper 2 + paper 4)", "",
           "Generado por `src/comparacion_final.py`. Prueba oficial: 2019-2024 (57 distritos, 4 104 filas, 120 alertas). "
           "Prueba histórica: 2012-2014 (46 distritos, 1 656 filas), con clima observado.", ""]
     for protocol in PAPER2:
         if not (PAPER2[protocol] / "predicciones.csv").exists():
             print(f"Falta {PAPER2[protocol]}; se omite el protocolo {protocol}")
             continue
-        table = pd.DataFrame(team_rows(protocol) + paper2_rows(protocol))
+        table = pd.DataFrame(team_rows(protocol) + paper2_rows(protocol) + paper4_rows(protocol))
         full = pd.concat([table, references(protocol)], ignore_index=True)
         full.insert(0, "protocolo", protocol)
         full.to_csv(OUT / f"metricas_{protocol}.csv", index=False)
@@ -171,7 +192,8 @@ def main():
                to_markdown(full.sort_values("RMSE"), ["origen", "modelo", "entradas", "RMSE_validacion", "RMSE",
                                                       "RMSE_media_semillas", "RMSE_sd_semillas", "MAE", "MASE"], fmt), "",
                "`RMSE` usa la semilla 42; `RMSE_media_semillas` y `RMSE_sd_semillas` resumen 5 semillas "
-               "(solo redes del paper 2; los modelos del equipo se entrenaron una vez). Diferencias menores "
+               "(solo redes del paper 2; los modelos del equipo se entrenaron una vez y el SARIMA del paper 4 es "
+               "determinista). Diferencias menores "
                "que la desviación no son interpretables. Las filas «+ clima» del protocolo oficial son idénticas "
                "a «solo casos» porque en 2019-2024 no hay clima observado y se usa el respaldo sin clima.", "",
                "### Alerta (brote)", "",
