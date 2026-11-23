@@ -64,7 +64,9 @@ Tabla completa en [`results/metrics.csv`](results/metrics.csv), resumen y análi
 │   ├── 01b_eda_clima.ipynb      # EDA de clima e integración
 │   ├── 02_modelos.ipynb         # implementación y comparación de modelos
 │   ├── 03_baseline.ipynb        # líneas base (entregable parcial)
-│   └── 04_arbol_decision.ipynb  # árbol de decisión (entregable parcial)
+│   ├── 04_arbol_decision.ipynb  # árbol de decisión (entregable parcial)
+│   ├── 05_paper_integrante1_xgboost.ipynb  # réplica del paper 1 (XGBoost)
+│   └── 06_paper_integrante2_redes.ipynb    # réplica del paper 2 (SFNN/DFNN)
 ├── src/
 │   ├── preprocessing.py         # limpieza y panel mensual
 │   ├── integracion_clima.py     # clima y asignación de estaciones
@@ -72,13 +74,17 @@ Tabla completa en [`results/metrics.csv`](results/metrics.csv), resumen y análi
 │   ├── evaluation.py            # métricas y evaluación
 │   ├── experimento_clima.py     # entrenamiento y selección por validación
 │   ├── resultados_finales.py    # metrics.csv, plots/ y model_comparison.txt
+│   ├── modelo_paper2.py         # redes SFNN1/SFNN2/DFNN del paper 2
+│   ├── comparacion_final.py     # equipo + paper 2: accuracy, ROC-AUC, EER, matriz de confusión
 │   ├── ejecutar.py              # punto de entrada
 │   └── tests/
 ├── results/
 │   ├── metrics.csv              # tabla comparativa
 │   ├── plots/                   # gráficos (EDA, árbol y resultados finales)
 │   ├── model_comparison.txt     # resumen de resultados y análisis
-│   └── experimento_clima/       # métricas, predicciones y diagnósticos completos
+│   ├── experimento_clima/       # métricas, predicciones y diagnósticos completos
+│   ├── paper2/, paper2_historico/  # redes del paper 2 (métricas, validación, predicciones)
+│   └── comparacion_final/       # tabla y gráficos equipo + paper 2
 ├── papers/                      # paper_integrante1.pdf … paper_integrante4.pdf y resúmenes
 ├── docs/                        # guía del pipeline, análisis, decisiones, report.docx
 ├── registro_de_pruebas/         # versiones probadas y retiradas
@@ -97,6 +103,11 @@ pip install -r requirements.txt          # versiones exactas: requirements-lock.
 python -m unittest discover -s src/tests -v                     # pruebas
 python src/ejecutar.py --modo experimento-v1 --reutilizar-datos  # entrena los 5 modelos (~1-2 min en CPU)
 python src/resultados_finales.py                                 # metrics.csv, plots/ y model_comparison.txt
+
+# Réplica del paper 2 (≈50 min el oficial y ≈35 min el histórico; pueden correr en paralelo)
+python src/modelo_paper2.py
+python src/modelo_paper2.py --protocolo historico
+python src/comparacion_final.py                                  # results/comparacion_final/
 ```
 
 Otros modos:
