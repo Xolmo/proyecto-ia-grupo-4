@@ -10,12 +10,12 @@
 | `requirements.txt` con todas las dependencias | ✅ | `requirements.txt` |
 | Todos los modelos implementados (mínimo 2) | ✅ 5 modelos | `src/models.py`: lineal (Ridge / regresión logística), árbol de decisión, Random Forest, MLP y CNN temporal |
 | Métricas y evaluación | ✅ | `src/evaluation.py` (RMSE, MAE, MASE, PR-AUC, F1, recall, precisión) |
-| Tabla comparativa de métricas | ✅ | `results/metrics.csv` (también `results/tabla_comparativa.md`) |
+| Tabla comparativa de métricas | ✅ | `results/metrics.csv` (también `results/tabla_comparativa.md`): 5 modelos del equipo, redes del paper 2 y SARIMA del paper 4 en las mismas filas de prueba |
 | Gráficos | ✅ | `results/plots/` (`fig1`–`fig5` de resultados finales, más EDA, árbol y réplicas de los papers) |
-| Resumen de resultados y análisis | ✅ | `results/model_comparison.txt` |
+| Resumen de resultados y análisis | ✅ | `results/model_comparison.txt`, con una sección por paper (el XGBoost del paper 1 se resume aparte, evaluado en 70 distritos) |
 | Por qué un modelo funcionó mejor, limitaciones e insights | ✅ | `results/model_comparison.txt`, `results/analisis/ANALISIS_RESULTADOS.md` y `report.pdf` |
 | Implementación y comparación en notebook | ✅ | `notebooks/02_modelos.ipynb` (ejecutado, con salidas) |
-| Paper / reporte académico (3–5 páginas, APA) | ✅ | `report.pdf`: cuerpo de 5 páginas, más portada, resumen y referencias |
+| Paper / reporte académico (3–5 páginas) | ✅ | `report.pdf`: 5 páginas en formato IEEE de la plantilla del curso, con resumen, declaración de uso de IA, contribuciones y referencias |
 | Réplica del paper 1 (XGBoost, Adams et al.) | ✅ | `src/p1_adams.py`, `notebooks/05_paper_integrante1_xgboost.ipynb`, `results/p1_adams/`, `results/plots/p1_*.png` |
 | Réplica del paper 2 (redes SFNN/DFNN) y comparación con el equipo | ✅ | `src/modelo_paper2.py`, `src/comparacion_final.py`, `notebooks/06_paper_integrante2_redes.ipynb`, `results/comparacion_final/`, `results/analisis/ANALISIS_PAPER2.md` |
 | Réplica del paper 4 (SARIMA, El Alaoui et al.) | ✅ | `src/modelo_paper4.py`, `notebooks/07_paper_integrante4_sarima.ipynb`, `results/paper4/`, `results/paper4_historico/`, `results/analisis/ANALISIS_PAPER4.md`; incluido en `results/comparacion_final/` |
@@ -26,11 +26,12 @@
 
 Prueba 2019–2024, 57 distritos, 4 104 filas distrito × mes:
 
-- **Modelo elegido por validación:** Random Forest con solo casos.
-  - Casos: RMSE 0,926, un 16 % menor que la regla "siempre cero".
-  - Alertas: PR-AUC 0,120, unas 4 veces la del azar (0,029).
-- **MLP:** resultados equivalentes, con menos del 1 % de diferencia en RMSE.
+- **Modelo final:** la DFNN del paper 2 con las 7 variables de casos, que tiene el menor RMSE de validación de todos los modelos (1,115). Es el modelo que analiza `report.pdf`.
+  - Casos: RMSE 0,916 (0,922 ± 0,016 con 5 semillas), un 17 % menor que la regla "siempre cero".
+  - Alertas: PR-AUC 0,158, más de 5 veces la del azar (0,029). Detecta 70 de 120 brotes, con 664 falsas alarmas.
+- **Mejor del equipo:** el Random Forest con solo casos (RMSE 0,926, PR-AUC 0,120), empatado con la MLP (0,922). Ambos quedan a menos de 0,01 de RMSE de la DFNN, así que en casos los tres son equivalentes. La DFNN es mejor en alertas.
 - **Clima:** no mejoró de forma consistente, porque las observaciones terminan en 2015.
+- **Otros papers:** el XGBoost del paper 1 empata con el Random Forest en 70 distritos, y el SARIMA del paper 4 queda por detrás.
 
 ## Cómo verificar
 

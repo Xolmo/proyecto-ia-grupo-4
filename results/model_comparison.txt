@@ -18,21 +18,74 @@ MLP / Solo casos                         0.922   0.575    0.121     65/120
 MLP / Casos + clima                      0.919   0.573    0.132     59/120
 CNN / Solo casos                         0.938   0.621    0.112     50/120
 CNN / Casos + clima                      0.941   0.632    0.104     23/120
+Paper 2 · SFNN1 / 3 rezagos              0.976   0.701    0.125     72/120
+Paper 2 · SFNN2 / 3 rezagos              0.983   0.710    0.124     65/120
+Paper 2 · DFNN / 3 rezagos               1.002   0.749    0.124     84/120
+Paper 2 · SFNN1 / 7 variables            0.971   0.704    0.137     66/120
+Paper 2 · SFNN2 / 7 variables            0.960   0.687    0.138     67/120
+Paper 2 · DFNN / 7 variables             0.916   0.602    0.158     70/120
+Paper 4 · SARIMA del paper / serie       1.246   0.669    0.141     50/120
+Paper 4 · SARIMA por AIC / serie         0.946   0.556    0.083     66/120
 Regla: último mes                        1.187   0.561        -          -
 Regla: mismo mes año anterior            1.252   0.617        -          -
 Regla: siempre cero                      1.100   0.432        -          -
 Regla: clasificador al azar                  -       -    0.029          -
 
-Tabla completa: results/metrics.csv. Gráficos: results/plots/fig1..fig5.
+Paper 2 = redes SFNN/DFNN (Donizette et al.); Paper 4 = SARIMA (El Alaoui et al.). Misma partición
+y mismas filas de prueba que el equipo. El paper 1 (XGBoost) se evaluó en 70 distritos: sección 3.
+Tabla completa: results/metrics.csv. Gráficos: results/plots/fig1..fig5 y comparacion_final_*.png.
 
 2. MEJOR MODELO
 ------------------------------------------------------------------------------
-Elegido por validación: Random Forest con solo casos (RMSE de validación 1.1270).
+Modelo final: Paper 2 · DFNN con entradas «Solo casos (7 variables del equipo)». Es el de menor RMSE
+de validación entre todos los modelos (equipo + papers 2 y 4): 1.1148.
+- Casos: RMSE 0.916 con la semilla 42, 17 % menor que 'siempre cero' y 23 % menor que 'último mes'; 0.922 ± 0.016 con 5 semillas.
+- Alertas: PR-AUC 0.158, 5.4 veces la del azar; detecta 70/120 brotes con 664 falsas alarmas.
+
+Mejor del equipo por validación: Random Forest con solo casos (RMSE de validación 1.1270).
 - Casos: RMSE 0.926, 16 % menor que 'siempre cero' y 22 % menor que 'último mes'.
 - Alertas: PR-AUC 0.120, 4.1 veces la del azar (0.029); detecta 66/120 meses de brote con 759 falsas alarmas.
-- La MLP obtiene el menor RMSE en prueba (0.919); la diferencia entre los cinco modelos con solo casos es de 0.019 casos. Random Forest y MLP se consideran empatados.
+- La MLP obtiene el menor RMSE en prueba del equipo (0.919); la diferencia entre los cinco modelos con solo casos es de 0.019 casos. Random Forest y MLP se consideran empatados.
+- Frente a la media de 5 semillas de Paper 2 · DFNN, el Random Forest difiere en 0.004 de RMSE,
+  menos que la variación entre semillas: en casos quedan empatados.
+- En alertas, Paper 2 · DFNN es mejor (PR-AUC 0.158 frente a 0.120).
+- La importancia de variables (secciones 4 y 5) se mide con el Random Forest, porque las redes no la dan.
 
-3. POR QUÉ
+3. MODELOS DE LOS PAPERS
+------------------------------------------------------------------------------
+Paper 1 — XGBoost (Adams et al.). Evaluado en los 70 distritos de la comparación original
+(5 040 filas, prueba 2019-2024); por eso no está en la tabla 1.
+  Modelo                                                        RMSE     MAE
+  Equipo · árbol de decisión                                   0.907   0.576
+  Equipo · Random Forest (solo casos)                          0.892   0.565
+  Equipo · Random Forest (con clima rellenado al 52 %)         0.891   0.566
+  E1a · XGBoost, 7 variables del equipo, un entrenamiento      0.891   0.603
+  E1b · XGBoost, método del paper, un modelo para todos        0.893   0.545
+  E1c · XGBoost, método del paper, un modelo por distrito      0.941   0.528
+  E1d · XGBoost, método del paper con toda la historia         0.897   0.606
+  Referencia · repetir el mes anterior                         1.142   0.537
+  Referencia · repetir el mismo mes del año anterior           1.222   0.603
+  Referencia · predecir siempre cero                           1.054   0.413
+- Con las mismas 7 variables, XGBoost (E1a) empata con el Random Forest del equipo (0.891 vs 0.892).
+- El método del paper con un modelo para todos (E1b) empata con el Random Forest (0.893); con un modelo
+  por distrito (E1c) el RMSE cambia +5.5 %, aunque el MAE baja a 0.528.
+
+Paper 2 — redes SFNN1, SFNN2 y DFNN (Donizette et al.).
+- Con los 3 rezagos del paper: RMSE 0.976-1.002, peor que los cinco modelos del equipo (0.922-0.941).
+- Con las 7 variables del equipo, el RMSE medio de 5 semillas cambia de 0.956 a 0.931;
+  entre arquitecturas la diferencia es de 0.017. Importan más las variables que la arquitectura.
+- Sus variantes con clima no tuvieron clima en 2019-2024 y dan lo mismo que solo casos.
+
+Paper 4 — SARIMA (El Alaoui et al.), una serie por distrito.
+- Con el orden del paper, (0,1,0)(1,1,0)12, en todos los distritos: RMSE 1.246, peor que 'siempre cero' (1.100).
+- Eligiendo el orden por AIC en cada distrito: RMSE 0.946, cerca del equipo, pero PR-AUC 0.083, la más baja de la tabla,
+  con 1092 falsas alarmas. Con el 75 % de los meses en cero, la serie sigue la persistencia,
+  pero anticipa los brotes peor que los demás modelos.
+
+Paper 3 — Araque y Paipa (tesis sobre dengue). No se replicó: se usó como antecedente de los
+efectos climáticos rezagados, y sus resultados son de otra enfermedad.
+
+4. POR QUÉ
 ------------------------------------------------------------------------------
 - El historial reciente de casos domina: las variables de casos suman el 86 % de la
   importancia del Random Forest; la media de los últimos 3 meses es la principal.
@@ -42,29 +95,33 @@ Elegido por validación: Random Forest con solo casos (RMSE de validación 1.127
 - La CNN solo ve 3 meses y hay pocos datos por distrito: no aprovecha la convolución.
 - El modelo lineal queda cerca porque la señal principal es la persistencia.
 
-4. APORTE DEL CLIMA
+5. APORTE DEL CLIMA
 ------------------------------------------------------------------------------
 - En casos, el clima cambia el RMSE como máximo 0.0034. En alertas ayuda a
   Random Forest y al árbol, pero empeora a la CNN y dispara falsas alarmas del lineal.
 - El clima suma el 14 % de la importancia (sobre todo lluvia de 2-3 meses antes).
 - Los datos SENAMHI disponibles terminan en octubre de 2015; en 2019-2024 el clima
   es imputado y solo el 18 % de las predicciones de prueba tuvo clima completo.
+- La réplica del paper 1 con clima observado (2012-2014, 46 distritos) llega a lo mismo: XGBoost
+  con clima (RMSE 1.054) no mejora a XGBoost con solo casos (1.049).
   Con estos datos no se puede afirmar ni descartar que el clima mejore la predicción.
 
-5. INSIGHTS
+6. INSIGHTS
 ------------------------------------------------------------------------------
 - En MAE ganan las reglas simples ('siempre cero' 0.432); los modelos ganan en RMSE porque
   fallan menos en los meses con varios casos, los relevantes para vigilancia.
-- Todos sobreestiman el total: 1774 casos observados frente a 2134-2407 predichos.
+- Los modelos del equipo sobreestiman el total: 1774 casos observados frente a 2134-2407 predichos.
   La incidencia anual cayó de 618 (ajuste) a 447 (validación) y 296 (prueba).
 - Se anticipa el pico de enero de cada año, pero no su tamaño.
 - Los distritos con más casos se subestiman y los pequeños se sobreestiman.
-- Para detectar el 55 % de los brotes, el modelo emite ~11.5 alertas falsas por cada verdadera.
+- Para detectar el 58 % de los brotes, Paper 2 · DFNN emite ~9.5 alertas falsas por cada verdadera;
+  el Random Forest, el 55 % con ~11.5.
 
-6. LIMITACIONES
+7. LIMITACIONES
 ------------------------------------------------------------------------------
 - Clima sin observaciones después de 2015; la imputación no recupera mediciones reales.
-- Una semilla, un periodo de prueba y 2 configuraciones por modelo; sin intervalos de confianza.
+- Una semilla en los modelos del equipo (5 en las redes del paper 2), un periodo de prueba y
+  2 configuraciones por modelo del equipo; sin intervalos de confianza.
 - El periodo de prueba ya se revisó en versiones anteriores: no es validación externa nueva.
 - Se excluyen distritos con menos de 50 casos hasta 2015.
 - La alerta (media + 2 DE) es una convención; el puntaje no está calibrado.

@@ -53,7 +53,9 @@ Tabla completa con precisión, recall y falsas alarmas: [results/tabla_comparati
 
 ## 3. Qué modelo funcionó mejor
 
-**Random Forest con solo casos** es el modelo elegido. Fue el mejor en validación en las dos tareas (RMSE de validación 1,127 y PR-AUC de validación 0,102), y ese es el criterio del pipeline: el periodo de prueba no se usa para elegir.
+> **Modelo final del proyecto:** al sumar las réplicas de los papers, la DFNN del paper 2 con las 7 variables de casos tiene el menor RMSE de validación (1,115) y es el modelo que analiza `report.pdf`: RMSE 0,916 en prueba y PR-AUC 0,158. Esta sección analiza el mejor modelo del equipo, que empata con ella en casos. La comparación está en [`ANALISIS_PAPER2.md`](ANALISIS_PAPER2.md) y en `../model_comparison.txt`.
+
+**Random Forest con solo casos** es el mejor modelo del equipo. Fue el mejor en validación en las dos tareas (RMSE de validación 1,127 y PR-AUC de validación 0,102), y ese es el criterio del pipeline: el periodo de prueba no se usa para elegir.
 
 En prueba:
 
