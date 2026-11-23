@@ -1,0 +1,7 @@
+protocol,variant,rows,filled_cells,invalid_temperature,negative_rain
+historico,sin_imputar,7728,0,0,0
+historico,estacional_52,7728,852,0,0
+historico,huecos_cortos,7728,603,0,0
+oficial,sin_imputar,16416,0,0,0
+oficial,estacional_52,16416,11745,0,0
+oficial,huecos_cortos,16416,780,0,0

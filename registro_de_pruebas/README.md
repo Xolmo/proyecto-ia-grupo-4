@@ -1,6 +1,6 @@
 # Registro histórico de pruebas — decisión 17-11
 
-Se conserva V1 como propuesta del integrante solicitante. Las implementaciones de V2 y de ingeniería posterior se retiran por su instrucción; este registro mantiene la evidencia numérica y metodológica. La propuesta ejecutable está en [pipeline propuesta 17-11](../pipeline%20propuesta%2017-11/GUIA_DEL_PIPELINE.md).
+Se conserva V1 como propuesta del integrante solicitante. Las implementaciones de V2 y de ingeniería posterior se retiran por su instrucción; este registro mantiene la evidencia numérica y metodológica. La propuesta ejecutable está en [pipeline](../pipeline/GUIA_DEL_PIPELINE.md).
 
 ## Qué se probó realmente
 
@@ -29,9 +29,9 @@ Las matrices mantienen campaña, protocolo, tarea, versión, fuente y política 
 
 ## Motivo de probar y motivo de conservar
 
-La selección de familias se basó en que el equipo puede explicarlas, según el integrante. Las variantes posteriores exploraron si clima resumido, interacciones, extremos diarios o menor dimensión añadían información sobre los casos. Su base bibliográfica, hipótesis locales y límites están explicados en [D16 y D24 del registro de decisiones](../pipeline%20propuesta%2017-11/DECISIONES_Y_FUENTES.md#d24).
+La selección de familias se basó en que el equipo puede explicarlas, según el integrante. Las variantes posteriores exploraron si clima resumido, interacciones, extremos diarios o menor dimensión añadían información sobre los casos. Su base bibliográfica, hipótesis locales y límites están explicados en [D16 y D24 del registro de decisiones](../pipeline/DECISIONES_Y_FUENTES.md#d24).
 
-La decisión final de conservar V1 se atribuye al integrante solicitante, no se presenta como unanimidad ni como demostración de superioridad en todas las métricas. Fuente primaria: [decisión comunicada](../pipeline%20propuesta%2017-11/fuentes/DECISION_EQUIPO.md#conservar-v1).
+La decisión final de conservar V1 se atribuye al integrante solicitante, no se presenta como unanimidad ni como demostración de superioridad en todas las métricas. Fuente primaria: [decisión comunicada](../pipeline/fuentes/DECISION_EQUIPO.md#conservar-v1).
 
 La comparación de 70 distritos reprodujo RMSE 0,907046 del árbol original, 0,891514 de RF solo casos y 0,890787 de RF con imputación. Las otras campañas de 46/57 distritos no son comparables directamente con esos números. Fuente: [CSV equivalente](campanas/comparacion_70_distritos/metricas.csv).
 

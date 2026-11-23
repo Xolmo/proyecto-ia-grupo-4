@@ -1,6 +1,6 @@
 {
   "status": "OK",
-  "canonical_v1": "pipeline propuesta 17-11",
+  "canonical_v1": "pipeline",
   "historical_metric_rows": 649,
   "documented_decisions": 26,
   "package_manifest_files": 94,
